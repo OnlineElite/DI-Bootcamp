@@ -1,0 +1,26 @@
+*{
+    box-sizing: border-box;
+    
+    
+}
+
+.first{
+    background-color: gray;
+    border: 3px solid red;
+}
+.second{
+    background-color: gray;
+    border:3px solid green;
+}
+.first>div{
+    background-color: pink;
+    border: 3px solid blue;
+    text-align: center;
+    height: 300px;
+}
+.second>div {
+    background-color: paleturquoise;
+    border: 3px solid brown;
+    text-align: center;
+    height: 300px;
+}

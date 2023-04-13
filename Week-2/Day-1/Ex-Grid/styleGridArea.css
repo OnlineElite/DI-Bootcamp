@@ -1,0 +1,33 @@
+*{
+    box-sizing: border-box;
+    margin: 0;
+}
+.container{
+    display: grid;
+    grid-template-areas: 
+    'header header header header header'
+    'sidebar main main main main'
+    'footer footer footer footer footer';
+    grid-gap: 5px;
+}
+.item{
+    background-color: blue;
+}
+.header{
+    background-color: orange;
+    grid-area: header;
+    height: 60px;
+}
+.sidebar{
+    background-color: blue;
+    grid-area: sidebar;
+}
+.main{
+    background-color: pink;
+    grid-area: main;
+}
+.footer{
+    background-color: rgb(85, 155, 4);
+    grid-area: footer;
+    height: 60px;
+}

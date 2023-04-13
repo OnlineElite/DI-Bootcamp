@@ -1,0 +1,127 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+}
+
+body {
+    background-image: url(images/backgraound.jpg);
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+
+}
+
+.overlay {
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    background-color: rgba(247, 243, 243, 0.589);
+    z-index: -1;
+}
+
+/*------------title section--------------------*/
+.content {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    margin: 30px auto;
+}
+
+.title {
+    text-align: center;
+    width: 650px;
+
+}
+
+/*---------------------naubers section------------------------*/
+.numbers {
+    display: flex;
+    justify-content: space-evenly;
+    margin: 30px auto;
+
+}
+
+.state {
+    text-align: center;
+}
+
+.state span {
+    color: rgb(2, 2, 129);
+    font-size: 25px;
+    font-weight: bold;
+}
+
+.state p {
+    color: rgb(85, 83, 83);
+    font-size: 12px;
+    font-weight: bold;
+}
+
+/*-------------------cards section--------------------*/
+.container {
+    display: flex;
+    justify-content: center;
+    height: 400px;
+}
+
+.card {
+    width: 300px;
+    margin: 20px 20px;
+    position: relative;
+    border-radius: 2%;
+    box-shadow: 0 5px 8px 0 black, 0 7px 20px 0 gray;
+}
+
+.card .name {
+    padding: 20px 5px;
+    padding-top: 50px;
+    text-align: center;
+    color: white;
+    border-radius: 2%;
+}
+
+.card1 .name {
+    background-color: rgb(221, 13, 23);
+}
+
+.card2 .name {
+    background-color: rgb(11, 43, 223);
+}
+
+.card3 .name {
+    background-color: rgb(5, 238, 226);
+}
+
+.card .text {
+    background-color: rgb(247, 245, 245);
+    padding: 30px 5px;
+    padding-top: 10px;
+    padding-bottom: 40px;
+    border-radius: 2%;
+    color: rgb(68, 65, 65);
+}
+
+.photo {
+    background-color: yellow;
+    border-radius: 100%;
+    position: absolute;
+    left: 120px;
+    top: 123px;
+    width: 60px;
+    height: 60px;
+}
+
+.card1 {
+    align-self: flex-start;
+}
+
+.card2 {
+    align-self: flex-end;
+}
+
+.card3 {
+    align-self: center;
+}
+
+/*------------Media section--------------*/
+@media only screen and (max-width: 600px) {
+    
+}

@@ -1,0 +1,134 @@
+*{
+    box-sizing: border-box;
+}
+
+
+.backg{
+    position: relative;
+    background-image: url(images/back2.jpeg);
+    background-size: cover;
+    height: 100vh;
+    width: 100%;
+}
+/*--------------------Content section-----------------*/
+.header .content{
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    left: 30%;
+    top: 28%;
+    color: white;
+}
+.overlay{
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    background-color: rgba(0, 0, 0, 0.452);
+}
+.content span{
+    color: rgb(92, 228, 58);
+}
+.content button{
+    background-color: rgb(92, 228, 58);
+    padding: 3px 15px;
+    color: white;
+}
+.content input button{
+    padding: 3px 15px;
+    border-radius: 5px solid white;
+}
+/*------------------------navbar section---------------------------*/
+.navbar{
+    position: absolute;
+    top: 0;
+    left: 18%;
+    background-color:rgba(255, 255, 255, 0);
+    width: 100%;
+
+}
+.navbar sub{
+    color:  rgb(92, 228, 58);
+    font-weight: bold;
+}
+.navbar sup i{
+    font-size: 10px;
+    
+}
+.navbar a{
+    color: white;
+    font-weight: bold;
+}
+.navbar li a:hover {
+    text-decoration: underline;
+    text-decoration-color:rgb(92, 228, 58);
+}
+.navbar li{
+    margin: auto 7px;
+}
+/*---------------------Box section ------------------*/
+.row{
+    position: absolute;
+    width: 100%;
+    margin: auto;
+    bottom: 0;
+}
+.box{
+    color: white;
+    padding: 20px 5px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: rgb(92, 228, 58);
+    border-left: 1px solid white;
+}
+.box i{
+    font-size: 30px;
+}
+.dash{
+    background-color: white;
+    width: 20px;
+    height: 3px;
+    border-radius: 25%;
+}
+/*------------------Table section-------------------*/
+.container .row{
+    position: relative;
+    margin: auto;
+}
+.container .title{
+    margin: 50px auto;
+    width: 100%;
+    text-align: center;
+}
+.container .tbl{
+    width: 70%;
+    margin: auto;
+}
+.container .dash{
+    margin: auto;
+    background-color: black;
+    width: 20px;
+    height: 3px;
+    border-radius: 25%;
+}
+.container .tbl th i{
+    color: red;
+}
+.container .tbl td i {
+    font-size: 30px;
+}
+.bttn {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+.bttn button{
+    background-color:rgb(92, 228, 58);
+    border: 1px solid rgb(62, 155, 39);;
+}
+/*-----------------------footer section----------------------*/
+footer{
+    background-color: rgb(238, 231, 231);
+}
