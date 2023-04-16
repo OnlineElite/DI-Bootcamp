@@ -48,6 +48,6 @@ else if (users.length == 1) {
 else if (users.length == 2) {
     console.log(users[0] + " and " + users[1] + " are online")
 }
-else (users.length > 2) {
+else if(users.length > 2) {
     console.log(users[0] + " , " + users[1] + " and " + (users.length - 2) + " are online")
 }
