@@ -131,7 +131,7 @@ typeof (1 != 2)
 // Actual: false
 // Becouse 1 is the same as 1 whene we talk about values, but whene we talk about types they are different.
 
-/*---------------------Exercise_5--------------------*/
+/*---------------------Exercise_6--------------------*/
 5 + "34"
 // Prediction: 534
 // Actual:534
