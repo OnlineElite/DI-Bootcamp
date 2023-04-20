@@ -61,7 +61,7 @@
         'item1 item2 item3'
         'item4 item5 item6'
         'item7 item8 item9';
-    grid-gap: 2px;
+    grid-gap: 1px;
     width: 170px;
     height: 170px;
 }
@@ -90,7 +90,7 @@
     grid-area: box6;
 }
 
-.container {
+.container1 {
 
     display: grid;
     grid-template-areas:
@@ -103,7 +103,193 @@
 
 }
 .section{
-    border: 2px solid blue;
+    border: 1px solid blue;
     width: fit-content;
-    margin: auto;
+    margin: 50px auto;
+}
+/*--------------------------------------------------------*/
+/**********************New section*************************/
+/*--------------------------------------------------------*/
+.item11 {
+    grid-area: item11;
+    background-color: rgb(184, 183, 181);
+}
+
+.item12 {
+    grid-area: item12;
+    background-color: rgb(105, 105, 104);
+}
+
+.item13 {
+    grid-area: item13;
+    background-color: rgb(54, 54, 54);
+}
+
+.item14 {
+    grid-area: item14;
+    background-color: rgb(8, 8, 8);
+}
+
+.item15 {
+    grid-area: item15;
+    background-color: rgb(184, 183, 181);
+}
+
+.item16 {
+    grid-area: item16;
+    background-color: rgb(105, 105, 104);
+}
+
+.item17 {
+    grid-area: item17;
+    background-color: rgb(54, 54, 54);
+}
+
+.item18 {
+    grid-area: item18;
+    background-color: rgb(8, 8, 8);
+}
+
+
+.itemss {
+    width: 50px;
+    height: 50px;
+}
+
+.boxess {
+    display: grid;
+    grid-template-areas:
+        'item11 item12 item13 item14'
+        'item15 item16 item17 item18';
+    grid-gap: 1px;
+    width: 230px;
+    height: 110px;
+}
+
+/*------------------container section-------------------*/
+.boxx1 {
+    grid-area: boxx1;
+}
+
+.boxx2 {
+    grid-area: boxx2;
+}
+
+.boxx3 {
+    grid-area: boxx3;
+}
+
+.boxx4 {
+    grid-area: boxx4;
+}
+
+.boxx5 {
+    grid-area: boxx5;
+}
+
+.boxx6 {
+    grid-area: boxx6;
+}
+
+.container2 {
+    display: grid;
+    grid-template-areas:
+        'boxx1 boxx2 boxx3 boxx4 '
+        'boxx1 boxx2 boxx3 boxx4 '
+        'boxx1 boxx2 boxx3 boxx4 ';
+    grid-gap: 1px;
+    justify-content: center;
+    margin-bottom: 0;
+}
+/*--------------------------------------------------------*/
+/**********************New section*************************/
+/*--------------------------------------------------------*/
+.item111 {
+    grid-area: item111;
+    background-color: white;
+}
+
+.item112 {
+    grid-area: item112;
+    background-color: rgb(236, 147, 162);
+}
+
+.item113 {
+    grid-area: item113;
+    background-color: white;
+}
+
+.item114 {
+    grid-area: item114;
+    background-color: rgb(236, 147, 162);
+}
+
+.item115 {
+    grid-area: item115;
+    background-color: rgb(236, 147, 162);
+}
+
+.item116 {
+    grid-area: item116;
+    background-color: rgb(224, 26, 26);
+}
+
+.item117 {
+    grid-area: item117;
+    background-color: rgb(236, 147, 162);
+}
+
+.item118 {
+    grid-area: item118;
+    background-color: rgb(224, 26, 26);
+}
+
+
+.itemsss {
+    width: 50px;
+    height: 50px;
+}
+
+.boxesss {
+    display: grid;
+    grid-template-areas:
+        'item111 item112 item113 item114'
+        'item115 item116 item117 item118';
+    width: 200px;
+    height: 100px;
+}
+
+/*------------------container section-------------------*/
+.boxxx1 {
+    grid-area: boxxx1;
+}
+
+.boxxx2 {
+    grid-area: boxxx2;
+}
+
+.boxxx3 {
+    grid-area: boxxx3;
+}
+
+.boxxx4 {
+    grid-area: boxxx4;
+}
+
+.boxxx5 {
+    grid-area: boxxx5;
+}
+
+.boxxx6 {
+    grid-area: boxxx6;
+}
+
+.container3 {
+    display: grid;
+    grid-template-areas:
+        'boxxx1 boxxx2 boxxx3 boxxx4 '
+        'boxxx1 boxxx2 boxxx3 boxxx4 '
+        'boxxx1 boxxx2 boxxx3 boxxx4 ';
+    justify-content: center;
+    margin-bottom: 0;
 }
