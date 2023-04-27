@@ -2,8 +2,8 @@
 /*-------------------------Daily Challenge--------------------*/
 // First Method
 var star = '*';
-var output = '';
-var space = '+';
+var output = '', desplay = ''
+
 
 for(let i=0; i<6; i++){
     output += star;
@@ -13,11 +13,11 @@ for(let i=0; i<6; i++){
 // Second Method
 console.log("///////////")
 
-for(let i=0; i<7; i++){
-    output += star;
-    for(let j= 6; j>0; j--){
-        output += space;
-        console.log(output)
+for(let i=1; i<=3; i++){
+    
+    for(let j=1; j<= i; j++){
+
+        desplay += "*";
+        console.log(desplay);
     }
-    j--;
 }
