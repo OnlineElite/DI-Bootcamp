@@ -8,37 +8,43 @@
     <title>MiniProject2</title>
 </head>
 <body>
+
     <table>
-        <tr class="inp">
-            <td colspan="4"><input type="text" placeholder="0"></td>
+        <tr>
+            <td colspan="4">
+                <div class="desplay">
+                    <div class="input" placeholder="0"></div>
+                    <div class="output" placeholder="0"></div>
+                </div>
+            </td>
         </tr>
         <tr>
-            <td><button class="num" type="button" name="button" onclick="number(0);">0</button></td>
-            <td><button class="num" type="button" name="button" onclick="number(1);">1</button></td>
-            <td><button class="num" type="button" name="button" onclick="number(2);">2</button></td>
-            <td><button class="num" type="button" name="button" onclick="number(3);">3</button></td>
+            <td><button class="key" type="button" name="button" onclick="number(0);">0</button></td>
+            <td><button class="key" type="button" name="button" onclick="number(1);">1</button></td>
+            <td><button class="key" type="button" name="button" onclick="number(2);">2</button></td>
+            <td><button class="key" type="button" name="button" onclick="number(3);">3</button></td>
         </tr>
         <tr>
-            <td><button class="num" type="button" name="button" onclick="number(4);">4</button></td>
-            <td><button class="num" type="button" name="button" onclick="number(5);">5</button></td>
-            <td><button class="num" type="button" name="button" onclick="number(6);">6</button></td>
-            <td><button class="num" type="button" name="button" onclick="number(7);">7</button></td>
+            <td><button class="key" type="button" name="button" onclick="number(4);">4</button></td>
+            <td><button class="key" type="button" name="button" onclick="number(5);">5</button></td>
+            <td><button class="key" type="button" name="button" onclick="number(6);">6</button></td>
+            <td><button class="key" type="button" name="button" onclick="number(7);">7</button></td>
         </tr>
         <tr>
-            <td><button class="num" type="button" name="button" onclick="number(8);">8</button></td>
-            <td><button class="num" type="button" name="button" onclick="number(9);">9</button></td>
-            <td><button class="num" type="button" name="button" onclick="dot('.');">.</button></td>
-            <td><button class="ope" type="button" name="button" onclick="operator('+');">+</button></td>
+            <td><button class="key" type="button" name="button" onclick="number(8);">8</button></td>
+            <td><button class="key" type="button" name="button" onclick="number(9);">9</button></td>
+            <td><button class="key" type="button" name="button" onclick="number('.');">.</button></td>
+            <td><button class="key operator" type="button" name="button" onclick="operator('+');">+</button></td>
         </tr>
         <tr>
-            <td><button class="ope" type="button" name="button" onclick="operator('-');">-</button></td>
-            <td><button class="ope" type="button" name="button" onclick="operator('*');">*</button></td>
-            <td><button class="ope" type="button" name="button" onclick="operator('/');">/</button></td>
-            <td><button class="ope" type="button" name="button" onclick="equal();">=</button></td>
+            <td><button class="key operator" type="button" name="button" onclick="operator('-');">-</button></td>
+            <td><button class="key operator" type="button" name="button" onclick="operator('*');">X</button></td>
+            <td><button class="key operator" type="button" name="button" onclick="operator('/');">/</button></td>
+            <td><button class="key operator" type="button" name="button" onclick="equal();">=</button></td>
         </tr>
         <tr>
-            <td colspan="2"><button class="reset" type="button" name="button" onclick="reset();">reset</button></td>
-            <td colspan="2"><button class="clear" type="button" name="button" onclick="clear();">clear</button></td>
+            <td colspan="2"><button class="reset key action" type="button" name="button" onclick="reset();">reset</button></td>
+            <td colspan="2"><button class="clear key action" type="button" name="button" onclick="clear();">clear</button></td>
         </tr>
     </table>
 
