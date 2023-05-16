@@ -16,16 +16,47 @@ var quotes = [
     {
         id: 2,
         author: "author3",
-        quote: "Intelligence is the ability to adapt to change.",
+        quote: "Intelligence is the ability to adapt to change.(number1 for author3)",
         like: 0
     },
     {
         id: 3,
+        author: "author3",
+        quote: "test quote number2 for author3.",
+        like: 0
+    },
+    {
+        id: 4,
+        author: "author3",
+        quote: "test quote number3 for author3.",
+        like: 0
+    },
+    {
+        id: 5,
         author: "author2",
-        quote: "test quote for all authors.",
+        quote: "test quote number2 for author2.",
+        like: 0
+    },
+    {
+        id: 6,
+        author: "author2",
+        quote: "test quote number3 for author2.",
+        like: 0
+    },
+    {
+        id: 7,
+        author: "author1",
+        quote: "test quote number2 for author1.",
+        like: 0
+    },
+    {
+        id: 8,
+        author: "author1",
+        quote: "test quote number3 for author1.",
         like: 0
     },
 ]
+
 var btn = document.getElementById('btn')
 var screen = document.getElementById('dis')
 btn.addEventListener('click', displayQuote)
@@ -118,20 +149,35 @@ function searchFunction(){
             continue;
         }
     }
+    
 }
-
+ console.log(allQuots)
 nextBtn.addEventListener('click',nextFunction);
 function nextFunction(){
-    displayArea.textContent = "";
-    for(let i in allQuots){
-        displayArea.textContent = allQuots[Number(i)+1]
+    if(allQuots.includes(displayArea.textContent)){
+        var index = allQuots.indexOf(displayArea.textContent)
+        if(index == 0){
+            index++
+            displayArea.textContent = allQuots[index++]
+        }
+        else{ 
+            index++
+            displayArea.textContent = allQuots[index++]
+        }        
     }
 }
 
 previousBtn.addEventListener('click', previousFunction);
 function previousFunction(){
-    displayArea.textContent = "";
-    for(let i in allQuots){
-        displayArea.textContent = allQuots[Number(i)-1]
-    }
+    if(allQuots.includes(displayArea.textContent)){
+        var index = allQuots.indexOf(displayArea.textContent)
+        if(index == allQuots.length-1){
+            index--
+            displayArea.textContent = allQuots[index--]
+        }
+        else{ 
+            index--
+            displayArea.textContent = allQuots[index--]
+        }        
+    } 
 }
