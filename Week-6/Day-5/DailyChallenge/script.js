@@ -1,9 +1,11 @@
 /*-----------------DailyChallenge--------------*/
 
-function testTrothy(para1, para2, para3){
-    var parametres =[para1, para2, para3];
+function testTrothy(...parametres){
+    
     console.log(parametres)
-    parametres.every(val => val == true )
+    return parametres.every(val => val)
+    
 }
-testTrothy(true, 2, 0))
+console.log(testTrothy(true, "nn", 2,'kk'))
 
+ 
