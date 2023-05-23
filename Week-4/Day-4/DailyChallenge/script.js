@@ -1,13 +1,14 @@
 /*----------------------DailyChallenge------------------*/
-var dropsNumber = prompt("Enter the number of bottels droped: ")
-Number(dropsNumber);
-var i= 99;
+
+var startNumber = prompt("Enter the number of bottels on the wall: ")
+Number(startNumber);
+var i = 1
 do{
-    console.log( i + " bottles of beer on the wall")
-    console.log( i + " bottles of beer")
-    console.log("Take " + dropsNumber + " down, pass it around")
-    console.log((i-dropsNumber)+ " bottles of beer on the wall")
+    console.log( startNumber + " bottles of beer on the wall")
+    console.log( startNumber + " bottles of beer")
+    console.log("Take " + i + " down, pass it around")
+    console.log((startNumber - i)+ " bottles of beer on the wall")
     console.log("  ")
-    i = i-dropsNumber;
-    dropsNumber++;
-}while( i >= 0 && i > dropsNumber)
+    startNumber = startNumber - i;
+    i++;
+}while( startNumber >= 0 && startNumber > i)

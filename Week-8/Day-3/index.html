@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AJAX Exemple</title>
+</head>
+<body>
+
+    <input type="text">
+    <script>
+        let req = new XMLHttpRequest();
+
+        req.open('GET', 'https://api.chucknorris.io/jokes/random?category=explicit',true);
+
+        req.send();
+
+        req.responseType = 'json';
+
+        req.onload = function (){
+            if(req.status != 200){
+                alert("there is an erreur")
+            }
+            else{
+                var res = "response is: " + req.response.value;
+                var inp = document.getElementsByTagName('input')[0]
+                inp.style.width = "700px";
+                inp.style.backgroundColor = "black";
+                inp.style.border = "2px solid blue";
+                inp.style.padding = "5px";
+                inp.style.color = "yellow";
+                inp.value = res;
+            }
+        }
+
+        
+
+    </script>
+</body>
+</html>
