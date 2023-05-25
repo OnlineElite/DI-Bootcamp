@@ -1,0 +1,21 @@
+*{
+    box-sizing: border-box;
+}
+
+.container{
+    width: 70vw;
+}
+
+#frm{
+    display: flex;
+}
+
+input{
+    margin: 3px;
+}
+
+#display{
+    margin-top: 20px;
+    font-size: 18px;
+    padding: 5px;
+}
