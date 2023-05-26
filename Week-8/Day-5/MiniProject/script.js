@@ -207,7 +207,7 @@ kBtn.classList.add('kBtn')
 btns.appendChild(kBtn)
 
 var fBtn = document.createElement('button')
-fBtn.textContent = "To Fahrenheit "
+fBtn.textContent = "To Fahrenheit"
 fBtn.classList.add('fBtn')
 btns.appendChild(fBtn)
 con.appendChild(btns)
@@ -256,6 +256,7 @@ function toFahrenheit(){
             var newTemp = ((Number(oldTemp)-32)*(5/9)).toFixed(1)
             t.textContent = newTemp;
             fBtn.textContent = "To Fahrenheit"
+            console.log(54)
             //sup.textContent = "°C"
         }
     }
