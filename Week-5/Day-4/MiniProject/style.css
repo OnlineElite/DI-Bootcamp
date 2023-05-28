@@ -1,0 +1,57 @@
+*{
+    box-sizing: border-box;
+}
+body{
+    margin: 0;
+    padding: 0;
+}
+
+.container{
+    background-color: lightblue;
+    width: 100vw;
+    height: 100vh;
+    margin: auto;
+    display: grid;
+    grid-template-columns: 1fr 4fr;
+    padding: 10px;
+}
+/*--------------------colors pallet---------------------*/
+.pallet{
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(8, 1fr);
+    grid-gap: .5rem;
+    padding-inline: .5rem;
+}
+.pallet .item{
+    border: 1px solid black;
+}
+.pallet .clear{
+    grid-column: 1/-1; /* from the last colomn to the last column == the whol row == even if we add an outher box it well not set byside the button clesr*/ 
+}
+
+.pallet .clear button{
+    width: 48%;
+    height: 100%;
+    border-radius: 10px;
+    background-color: white;
+    color: black;
+    margin-inline: 2px;
+    font-weight: bolder;
+}
+
+.pallet .item{
+    background-color: white;
+    cursor: pointer;
+}
+
+/*--------------------White space---------------------*/
+.whitespace{
+    display:grid;
+    grid-template-columns: repeat(60, 1fr);
+    
+}
+.whitespace>*{
+    border: 1px solid lightgrey;
+    background-color: white;
+}

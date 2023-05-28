@@ -1,6 +1,7 @@
 
 /*--------------------MiniProject------------------*/
 // Part I (Styling)
+let sup
 var sec = document.getElementsByTagName('section')[0]
 sec.style.display = "flex"
 sec.style.alignItems = "center"
@@ -113,7 +114,8 @@ function getCityInfo(e){
             temp.setAttribute('class', 'temperateurs')
             supTemp.appendChild(temp)
 
-            var sup = document.createElement('h2')
+            sup = document.createElement('h2')
+            sup.classList.add('sumbol')
             sup.textContent = "°C"
             sup.style.fontWeight = "5px"
             sup.style.fontSize = "35px"
@@ -215,6 +217,7 @@ con.appendChild(btns)
 //Fanction to change temperateur
 
 var changetemp = document.getElementsByClassName('temperateurs')
+var sumbols = document.getElementsByClassName('sumbol');
 // To kelvin
 kBtn.addEventListener('click', toKelvin)
 function toKelvin(){
@@ -226,14 +229,18 @@ function toKelvin(){
             var newTemp = (Number(oldTemp) +273.15).toFixed(1);
             t.textContent = newTemp;
             kBtn.textContent = "To Celsius"
-            //sup.textContent = "K"
+            for(let s of sumbols){
+                s.textContent = "K"
+            }
         }
         else{
             var oldTemp = t.textContent;
             var newTemp = (Number(oldTemp)-273.15).toFixed(1)
             t.textContent = newTemp;
             kBtn.textContent = "To Kelvin"
-            //sup.textContent = "°C"
+            for(let s of sumbols){
+                s.textContent = "°C"
+            }
         }
     }
 }
@@ -249,7 +256,9 @@ function toFahrenheit(){
             var newTemp = ((Number(oldTemp) *(9/5))+32).toFixed(1);
             t.textContent = newTemp;
             fBtn.textContent = "To Celsius"
-            //sup.textContent = "F"
+            for(let s of sumbols){
+                s.textContent = "F"
+            }
         }
         else{
             var oldTemp = t.textContent;
@@ -257,7 +266,9 @@ function toFahrenheit(){
             t.textContent = newTemp;
             fBtn.textContent = "To Fahrenheit"
             console.log(54)
-            //sup.textContent = "°C"
+            for(let s of sumbols){
+                s.textContent = "°C"
+            }
         }
     }
 }
