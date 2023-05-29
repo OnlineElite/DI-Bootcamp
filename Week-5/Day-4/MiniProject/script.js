@@ -4,6 +4,7 @@ generateColors()
 whiteSpaceDrawing()
 // Set & select colors
 const changeColor = document.getElementById('change')
+const clearBtn = document.getElementById('clear')
 var currentColor;
 let isMousePressed = false;
 
@@ -58,4 +59,13 @@ function mouseMoveAction(e){
 
 function mouseUpAction(){
     isMousePressed = false;
+}
+
+clearBtn.addEventListener('click',clearWhiteSpace)
+function clearWhiteSpace(){
+    currentColor = null
+    const whiteBoxes = document.querySelectorAll('.whitespace > div')
+    for(let b of whiteBoxes){
+        b.style.backgroundColor = "white"
+    }
 }
