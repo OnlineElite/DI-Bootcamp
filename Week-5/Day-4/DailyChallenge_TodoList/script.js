@@ -51,26 +51,28 @@ function addTask(e){
 // Check function
 function ifElemChecked(){
     let checkboxes = document.getElementsByClassName('chickes')
+    let labels = document.querySelectorAll('.listTasks div label')
     for(let i of checkboxes){
-        let iname =i.getAttribute('name')
-        i.addEventListener('change', function() {
-            let labels = document.querySelectorAll('.listTasks div label')
-            for(let j of labels){
+        
+        for(let j of labels){
+            let iname =i.getAttribute('name')
+            i.addEventListener('change', function() {
                 if (this.checked) {
                     let jname = j.getAttribute('name')
                     if(iname === jname){
                         j.classList.add('ChechedTask')
                     }
                     else{
-                        continue;
+                        return;
                     }
                 }
                 else {
                     j.classList.remove("ChechedTask")
                     return;
                 }
-            }  
-        });
+            });
+        }
+        
     }
 }
 
