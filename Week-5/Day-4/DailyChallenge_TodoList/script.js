@@ -47,15 +47,16 @@ function addTask(e){
     }
     inp.value = "";
 }
+
 // Check function
 function ifElemChecked(){
     let checkboxes = document.getElementsByClassName('chickes')
     for(let i of checkboxes){
         let iname =i.getAttribute('name')
         i.addEventListener('change', function() {
-            if (this.checked) {
-                let labels = document.querySelectorAll('.listTasks div label')
-                for(let j of labels){
+            let labels = document.querySelectorAll('.listTasks div label')
+            for(let j of labels){
+                if (this.checked) {
                     let jname = j.getAttribute('name')
                     if(iname === jname){
                         j.classList.add('ChechedTask')
@@ -64,14 +65,15 @@ function ifElemChecked(){
                         continue;
                     }
                 }
-            }
-            else {
-                j.classList.add('notChechedTask')
-                
-            }
+                else {
+                    j.classList.remove("ChechedTask")
+                    return;
+                }
+            }  
         });
     }
 }
+
 //Reset function
 function resetFunction(){
     var xButton = document.querySelectorAll('.listTasks div i')
@@ -92,5 +94,4 @@ function resetFunction(){
             }
         }
     }
-    
 }
