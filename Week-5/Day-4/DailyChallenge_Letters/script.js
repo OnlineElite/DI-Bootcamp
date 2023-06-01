@@ -2,20 +2,24 @@
 /*-----------------------DailyChallenge_Letters----------------------*/
 const inp = document.getElementById('display')
 
-inp.addEventListener('input',(e)=>{
-    e.preventDefault()
-    if(inp.value != ""){
-        if(/^[a-z]+$/i.test(inp.value)){
-            console.log(inp.value)
+inp.addEventListener('input',validateInput)
+function validateInput(){
+    var regexPattern = /^[a-z][a-z\s]*$/;
+    if(inp.value != ''){
+        if(inp.value.match(regexPattern))
+        {
+            console.log("Input is Validated");
+            return true;
         }
-        else{
-            let text = inp.value;
-            let leng = text.length
-            //console.log(text)
-            //console.log(leng)
-            let newText = text.substring(0, leng)
-            inp.value = newText;
+        else
+        {
+            const str = this.value;
+            const newValue = str.slice(0, str.length - 1);
+            this.value = newValue;
+            alert("Enter letters and spaces only");
+            return false;
         }
     }
-})
+ 
+}
 
