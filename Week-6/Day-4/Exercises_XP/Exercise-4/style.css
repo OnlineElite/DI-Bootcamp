@@ -1,0 +1,85 @@
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+body{
+    position: relative;
+}
+.containerStyle{
+    width: 100vw;
+    height: 100vh;
+    top: 0;
+    left: 0;
+    background-color: rgba(0, 0, 0, 0.507);
+    position: absolute;
+}
+
+.signInFormStyle{
+    width: 30%;
+    height: fit-content;
+    background-color: rgb(17, 2, 43);
+    margin: auto;
+    margin-top: 100px;
+    padding-bottom: 20px;
+    padding-top: 20px;
+    border-radius: 8px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: start;
+
+}
+.InpStyle{
+    width: 90%;
+    padding: 5px;
+    margin-bottom: 5px;
+    background-color: white;
+    font-size: 18px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    border-radius: 8px;
+}
+.subStyle{
+    font-size: 18px;
+    font-weight: bold;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    border-radius: 8px;
+    background-color: white;
+    color: black;
+    margin-top: 10px;
+    padding: 5px;
+    border: 2px solid orangered;
+    /*align-self: flex-start;*/
+}
+
+.formStyle{
+    display: none;
+    align-items: center;
+    margin-left: 50px;
+    margin-right: 10px;
+    background-color: transparent;
+    width: fit-content;
+}
+.usernameStyle{
+    color: black;
+    width: fit-content;
+    height: fit-content;
+    font-size: 18px;
+    font-weight: bold;
+    padding-top: 2px ;
+    padding-bottom: 2px;
+    padding-inline: 5px;
+    background-color: white;
+    border-radius: 10px;
+    margin-inline: 10px;
+}
+.photoStyle{
+    width: 45px;
+    height: 45px;
+    border-radius: 100%;
+    background-color: white;
+    background-size: cover;
+}
+
+
+
