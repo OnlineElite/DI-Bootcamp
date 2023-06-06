@@ -1,0 +1,111 @@
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+#container{
+    width: 100vw;
+    min-height:100vh;
+    padding-inline: 5px;
+    margin: auto;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    background-color: royalblue;
+    display: flex;
+    align-items: center;
+    justify-content: start;
+    flex-direction: column;
+}
+form{
+    width: 40%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 15px;
+}
+#inp{
+    width: 60%;
+    height: fit-content;
+    padding: 5px;
+    font-size: 18px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    border-radius: 8px;
+    background-color: white;
+    border:2px solid crimson;
+    margin-right: 5px;
+}
+
+#search, #deleteAll{
+    width: fit-content;
+    padding: 5px;
+    background-color: crimson;
+    color: white;
+    font-size: 18px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    border-radius: 8px;
+    border: 2px solid white;
+    margin-inline: 5px;
+}
+
+#search:hover, #deleteAll:hover{
+    background-color:white;
+    color: black;
+    border: 2px solid crimson;
+}
+#display{
+    width: 90%;
+    min-height: 550px;
+    background-color: white;
+    margin-inline: 5px;
+    border: 2px solid #dc143c;
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    padding: 5px;
+}
+.cardStyle{
+    width: 230px;
+    height: fit-content;
+    background-color:rgb(98, 219, 98);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    margin: 5px;
+    border: 2px solid orangered;
+}
+.gifStyle{
+    width: 100%;
+    height: 250px;
+    margin-top: 0;
+    margin-bottom: 8px;
+}
+.btnsContainerStyle{
+    width: 200px;
+    height: fit-content;
+    background-color: transparent;
+    padding: 5px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.deleteBtns{
+    width: fit-content;
+    padding: 5px;
+    background-color: white;
+    color: black;
+    font-size: 18px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    border-radius: 8px;
+    border: 2px solid crimson;
+    margin: 5px;
+}
+.deleteBtns:hover{
+    background-color:crimson;
+    color: white;
+    border: 2px solid white;
+}
+
