@@ -36,13 +36,13 @@ search.addEventListener('click', getData = (e)=>{
     const inp = document.getElementById('inp')
 
     let req = new XMLHttpRequest();
-    req.open('GET',`https://api.giphy.com/v1/gifs/random?q=hilarious&rating=g&api_key=hpvZycW22qCjn5cRM1xtWB8NKq4dQ2My`);
+    req.open('GET',`https://api.giphy.com/v1/gifs/random?q=${inp.value}&rating=g&api_key=hpvZycW22qCjn5cRM1xtWB8NKq4dQ2My&limit=1`);
     req.responseType = 'json';
     req.send();
 
     req.onload = function (){
         if(req.status == 200){
-            //console.log(req.response)
+            console.log(req.response)
             const responseToArray = Object.values(req.response)
             const data = responseToArray[0];
             const images = data.images;
