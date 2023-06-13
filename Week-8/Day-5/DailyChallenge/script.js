@@ -1,28 +1,41 @@
-
 /*-----------DailyChallenge-----------------*/
-function DateToString(yyyy,MM,dd,hh,mm,ss){
-    var dat = new Date(yyyy,MM,dd,hh,mm,ss)
-
-    var jsonDat = dat.toJSON()
-
-    console.log(dat)
-    console.log(jsonDat)
+function DateToString(date){
+    for(let i=0; i<1 ; i++){
+        if(date.getFullYear() < 1970){
+            alert('The year should be greater the 1970, please try again')
+            break;
+        }else{
+            let arrayDate = [
+                date.getFullYear().toString(),
+                (date.getMonth()+1).toString(),
+                date.getDate().toString(),
+                date.getHours().toString(),
+                date.getMinutes().toString(),
+                date.getSeconds().toString()
+            ]
+            console.log(arrayDate)
+        
+            arrayDate.forEach((val) => {
+                if(val.length == 1){
+                    const index = arrayDate.indexOf(val)
+                    const newtext = val.padStart(2,"0");
+                    arrayDate.splice(index, 1, newtext);
+                }
+            })
+            
+            let dateString = arrayDate.toString()
+            dateString = dateString.replaceAll(",", '')
+            //console.log(arrayDate)
+            console.log("The result is: "+ dateString)
+        }
+    }  
 }
 
-var fullDate = { 
-    year : 1997,
-    month : 10,
-    day : 15,
-    hour : 21,
-    minute : 22,
-    second : 31
-}
+DateToString(new Date(1989, 9, 15, 3, 45, 53))
+DateToString(new Date(2020, 6, 4, 8, 0, 0))
+DateToString(new Date(2019, 11, 31, 23, 59, 59))
+DateToString(new Date(2020, 6, 4))
 
-DateToString(fullDate.year,fullDate.month,fullDate.day,fullDate.hour,fullDate.minute,fullDate.second)
-
-// ( yyyy > 1970 )
-//  ( 23 >= hh >= 00 & hh.length === 2 )
-// ( MM.length === 2 & dd.length === 2 & mm.length === 2 & ss.length === 2 )
 
 
 
