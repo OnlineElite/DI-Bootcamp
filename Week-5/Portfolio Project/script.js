@@ -1,47 +1,68 @@
-filterSelection("all") // Execute the function and show all columns
-function filterSelection(c) {
-  var x, i;
-  x = document.getElementsByClassName("column");
-  if (c == "all") c = "";
-  // Add the "show" class (display:block) to the filtered elements, and remove the "show" class from the elements that are not selected
-  for (i = 0; i < x.length; i++) {
-    w3RemoveClass(x[i], "show");
-    if (x[i].className.indexOf(c) > -1) w3AddClass(x[i], "show");
-  }
-}
+// fill the tech skills range
 
-// Show filtered elements
-function w3AddClass(element, name) {
-  var i, arr1, arr2;
-  arr1 = element.className.split(" ");
-  arr2 = name.split(" ");
-  for (i = 0; i < arr2.length; i++) {
-    if (arr1.indexOf(arr2[i]) == -1) {
-      element.className += " " + arr2[i];
+const techSkills = [
+    { name : 'HTML5', range : 95 },
+    { name : 'CSS3', range : 95 },
+    { name : 'Bootstrap', range : 95 },
+    { name : 'JavaScript', range : 85 },
+    { name : 'DOM', range : 98},
+    { name : 'JSON', range : 94 },
+    { name : 'HTTP', range : 93 },
+    { name : 'AJAX', range : 90 },
+    { name : 'PostgreSQL', range : 90 },
+    { name : 'Node.js', range : 30 }
+]
+
+techSkills.forEach((val) => {
+    const techlang = document.getElementById('techlang')
+        const techname = document.createElement('div')
+        techname.classList.add('techname')
+            const langNmae = document.createElement('p')
+            langNmae.textContent = val.name;
+        techname.appendChild(langNmae)
+            const outer = document.createElement('div')
+            outer.classList.add('outer')
+                const inner = document.createElement('div')
+                inner.classList.add('inner')
+                inner.style.width = val.range+"%";
+            outer.appendChild(inner)
+        techname.appendChild(outer)
+    techlang.appendChild(techname)
+})
+
+
+const freeTimeTasks = [
+    {name : 'Internet browsing' , percent : 15},
+    {name : 'Programming' , percent : 50},
+    {name : 'Travel' , percent : 15},
+    {name : 'Sports' , percent : 20}
+]
+
+
+const numbers = document.getElementsByClassName('number')
+const taskNames = document.getElementsByClassName('taskName')
+freeTimeTasks.forEach((val) => {
+    
+    for(let num of numbers){
+        for(let task of taskNames){
+            console.log(task.getAttribute('name'))
+            if(num.getAttribute('name') == task.getAttribute('name') & num.getAttribute('name') == val.name){
+                console.log(`numid ${num.getAttribute('name')} taskid ${task.getAttribute('name')}`)
+                let counter = 0;
+                setInterval(() =>{
+                    if(counter == val.percent){
+                        clearInterval()
+                    }else{
+                        counter += 1;
+                        num.textContent = counter + "%";
+                    }
+                }, 40)
+                task.textContent = val.name;
+            }
+            else{
+                continue;
+            }
+        }
     }
-  }
-}
+})
 
-// Hide elements that are not selected
-function w3RemoveClass(element, name) {
-  var i, arr1, arr2;
-  arr1 = element.className.split(" ");
-  arr2 = name.split(" ");
-  for (i = 0; i < arr2.length; i++) {
-    while (arr1.indexOf(arr2[i]) > -1) {
-      arr1.splice(arr1.indexOf(arr2[i]), 1);
-    }
-  }
-  element.className = arr1.join(" ");
-}
-
-// Add active class to the current button (highlight it)
-var btnContainer = document.getElementById("myBtnContainer");
-var btns = btnContainer.getElementsByClassName("btn");
-for (var i = 0; i < btns.length; i++) {
-  btns[i].addEventListener("click", function(){
-    var current = document.getElementsByClassName("active");
-    current[0].className = current[0].className.replace(" active", "");
-    this.className += " active";
-  });
-}
