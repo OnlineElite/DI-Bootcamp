@@ -73,12 +73,12 @@ function exportData(){
         function openDescription(){
             const carts = document.getElementsByClassName('carts')
             for(let cart of carts){
-                console.log(cart)
+                //console.log(cart)
                 
                 cart.addEventListener('click', showDiescription) 
                 function showDiescription(e){
-                    console.log(e)
-                    console.log(e.target)
+                    //console.log(e)
+                    //console.log(e.target)
             
                     const dropMenu = document.getElementsByClassName('dropdown-menu')
                     for(let i of dropMenu){
