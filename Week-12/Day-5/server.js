@@ -25,10 +25,10 @@ app.route('/login')
                 item : req.body.item,
                 amount : req.body.amount
             }
-            //itemList.push(data)
+            itemList.push(data)
             //console.log('POST',data);
             res.sendStatus = 200;
-            res.send(data)
+            res.send(itemList)
             const respond = {
                 message : 'Data saved successfully!'
             }

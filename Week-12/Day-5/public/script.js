@@ -1,5 +1,4 @@
 const btn = document.getElementById('sub')
-//console.log(btn)
 
 sub.addEventListener('click', DataTransfert)
 function DataTransfert(e){
@@ -42,19 +41,23 @@ function DataTransfert(e){
             console.log("fill data")
             console.log(data);
             const display = document.getElementById('screen')
-
+            display.innerHTML = "";
+            data.forEach(obj => {
+                
                 const block = document.createElement('div')
                 block.setAttribute('class', 'block')
                     const spanItem = document.createElement('span')
                     spanItem.setAttribute('class', 'itemName')
-                    spanItem.textContent = data.item;
+                    spanItem.textContent = obj.item;
                 block.appendChild(spanItem)
                     const spanAmount = document.createElement('span')
                     spanAmount.setAttribute('class', 'itemAmount')
-                    spanAmount.textContent = data.amount;
+                    spanAmount.textContent = obj.amount;
                 block.appendChild(spanAmount)
 
-            display.appendChild(block)
+                display.append(block)
+            });
+            
         }
     })
     .catch(e => console.log(e))
