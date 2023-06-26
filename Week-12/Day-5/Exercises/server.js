@@ -1,9 +1,9 @@
 const exp = require('express');
 const bp = require('body-parser');
-const cors = require('cors')
+//const cors = require('cors')
 const app = exp();
 
-app.use(cors())
+//app.use(cors())
 app.use(bp.urlencoded({ extended: false }))
 app.use(bp.json())
 app.use('/',exp.static(__dirname+'/public'));
