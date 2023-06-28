@@ -15,7 +15,7 @@ const db = knex({
 
 function createUser({user,pass}){
   const salt = bcrypt.genSaltSync(saltRounds);
-  console.log(user +" "+ pass + " in db")
+  console.log(user +" "+ bcrypt.hashSync(pass, salt) + " in db")
   return db('users').insert(
     {
       username:user,

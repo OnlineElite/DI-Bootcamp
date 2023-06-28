@@ -7,7 +7,7 @@ app.use(bp.json())
 app.use('/',exp.static(__dirname+'/public'));
 
 const port = 7500;
-const usersData = [];
+var usersData = [];
 
 // API for register  //**********************************************************//
 app.post('/register',(req,res)=>{
@@ -68,7 +68,7 @@ app.post('/login',(req,res)=>{
             if(isUserAllreadyExsist(usersData, temp)){
                 res.sendStatus = 200;
                 const respond = { 
-                    message : "Hello! welcome back again "+temp[3],
+                    message : "Hello! welcome back again "+temp[0],
                 }
                 res.send(JSON.stringify(respond)) 
                 
