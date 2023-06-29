@@ -1,0 +1,15 @@
+<div class="posts">
+    <h1>Posts</h1>
+    <% posts.forEach((item)=> { %>
+        <div class="all">
+            <h2><a href="<%= item.link %>"><%= item.title %></a></h2>
+            <div class="info">
+                <p><%= item.pubDate%></p>
+                <p><%= item.creator%></p>
+                <p><%= item.categories.join(', ') %></p>
+            </div>
+            <div class="content"><%= item.content%></div>
+        </div>
+    <% }) %>
+    
+</div>

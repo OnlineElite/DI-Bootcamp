@@ -19,7 +19,6 @@ const app = exp();
 
 app.use(bp.urlencoded({extended:false}));
 app.use(bp.json());
-
 app.use('/',exp.static(__dirname+'/public'));
 
 
