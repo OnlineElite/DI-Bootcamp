@@ -103,9 +103,9 @@ app.post('/login',(req,res)=>{
 })
 
 // API for registerForm  /**********************************************************//
-app.get('/register',(req,res)=>{
-    console.log('requist recived', req.query.body)
-    const temp = Object.values(req.query.body)
+app.get('/registerForm',(req,res)=>{
+    console.log('requist recived', req.body)
+    const temp = Object.values(req.body)
     console.log(temp)
     if(!isEnyInputEmpty(temp)){
 
@@ -116,7 +116,7 @@ app.get('/register',(req,res)=>{
             }
             else{
                 res.sendStatus = 200;
-                usersData.push(req.query.body)
+                usersData.push(req.body)
                 const respond = { 
                     message : "Hello your account is now created!",
                 }
@@ -124,10 +124,10 @@ app.get('/register',(req,res)=>{
             }     
         }
         else{
-            usersData.push(req.query.body)
+            usersData.push(req.body)
             res.send({
                 message : "this is the first user",
-                info : `welcome ${req.query.body.fname}`
+                info : `welcome ${req.body.fname}`
             });
         }
     }
@@ -144,20 +144,20 @@ app.get('/register',(req,res)=>{
         }
     }
     function isUserAllreadyExsist(usersData, temp){
+        
         return usersData.some((obj) =>{ return obj.username === temp[3] })
     }
-    
 })
 
 // API for loginForm  /**********************************************************//
-app.get('/login',(req,res)=>{
-    console.log('requist recived', req.query.body)
-    const temp = Object.values(req.query.body)
+app.get('/loginForm',(req,res)=>{
+    console.log('requist recived', req.body)
+    const temp = Object.values(req.body)
     console.log(temp)
     if(!isEnyInputEmpty(temp)){
 
         if(usersData.length>0){
-            if(true/*isUserAllreadyExsist(usersData, temp)*/){
+            if(isUserAllreadyExsist(usersData, temp)){
                 res.sendStatus = 200;
                 const respond = { 
                     message : "Hello! welcome back again "+temp[0],
@@ -172,7 +172,7 @@ app.get('/login',(req,res)=>{
         }
         else{
             res.sendStatus = 404;
-            res.send({message : "Hello this account is not registred autre"}) 
+            res.send({message : "Hello this account is not registred new"}) 
         }
     }
     else{
@@ -188,10 +188,9 @@ app.get('/login',(req,res)=>{
         }
     }
     function isUserAllreadyExsist(usersData, temp){
-        console.log("test exist " + usersData)
+        console.log('51951951651 ' + usersData + " tmp" + temp)
         return usersData.some((obj) =>{ return obj.username === temp[0] })
     }
-    
 })
 
 app.listen(port, ()=> console.log(`server listening to port ${port} `))
