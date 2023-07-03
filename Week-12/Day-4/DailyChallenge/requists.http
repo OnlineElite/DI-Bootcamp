@@ -1,0 +1,10 @@
+post http://localhost:3000/formData
+Content-Type: application/json
+
+{
+    "firstname" : "jamal",
+    "lastname" : "boujbari",
+    "email" : "jamalboujbari@gmail.com",
+    "password" : "12359",
+    "message" : "Hello my friend"
+}

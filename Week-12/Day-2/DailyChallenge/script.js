@@ -20,7 +20,7 @@ server1.listen(3000,()=>{console.log(`I'm listening to server1...`);})
 //----------------------------------------------
 
 const server2 = http.createServer((req,res)=>{
-    console.log(model.myDate)
+
     res.setHeader('Content-Type', 'text/html');
     res.writeHead(200);
     const respose = `<html><body>

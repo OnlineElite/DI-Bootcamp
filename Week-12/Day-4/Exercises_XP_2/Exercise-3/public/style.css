@@ -1,0 +1,26 @@
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+
+.title{
+    color: red;
+    padding-inline: 10px;
+    padding-block: 5px;
+    border: 2px dashed green;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin: 10px;
+    width: fit-content;
+}
+
+#submit{
+    background-color: blue;
+    color: white;
+    font-size: 18px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    padding: 5px;
+    margin:10px;
+    border-radius: 8px;
+}
