@@ -21,9 +21,9 @@
 
                 <label for="">Search Category</label>
                 <select name="category" id="category">
-                    < category.forEach((val)=>{ >
-                        <option value="< val.category >">< val.category ></option>
-                    < }) >
+                    <% categories.forEach((val)=>{ %>
+                        <option value="<%= val.category %>"><%= val.category %></option>
+                    <% }) %>
                 </select>
                 <button>Search</button>
 

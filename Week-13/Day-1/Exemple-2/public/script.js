@@ -1,32 +1,32 @@
 function sendData() {
-    let user = document.getElementById('user').value;
-    let userdata = {
-      user,
-    }
-    fetch('http://localhost:3200/user',{
-      method: 'POST',
-      headers: {
-        'Content-Type':'application/json'
-      },
-      body: JSON.stringify(userdata)
-    })
-    .then(res => res.json())
-    .then(data => {
-      console.log(data);
-      document.getElementById('root').innerHTML = `${data.message}`
-    })
-    .catch(err => {
-      console.log(err);
-    })
+  let user = document.getElementById('user').value;
+  let userdata = {
+    user,
   }
+  fetch('http://localhost:3200/user',{
+    method: 'POST',
+    headers: {
+      'Content-Type':'application/json'
+    },
+    body: JSON.stringify(userdata)
+  })
+  .then(res => res.json())
+  .then(data => {
+    console.log(data);
+    document.getElementById('root').innerHTML = `${data.message}`
+  })
+  .catch(err => {
+    console.log(err);
+  })
+}
   
-  function getData() {
-    fetch('http://localhost:3200/show')
-    .then(res => res.json())
-    .then(data => {
-      showUsers(data);
-    })
-  }
+function getData() {
+  fetch('http://localhost:3200/show')
+  .then(res => res.json())
+  .then(data => {
+    showUsers(data);
+  })
+}
   
   function showUsers(data) {
     let root = document.getElementById('root');
