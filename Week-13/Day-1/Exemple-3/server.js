@@ -1,7 +1,7 @@
 const exp = require('express');
 const bp = require('body-parser');
 const DB = require('./modules/db.js')
-const bcrypt = require('bcrypt');
+const bcrypt = require('bcrypt'); //--------------------------
 const knex = require('knex');
 
 const db = knex({
@@ -55,7 +55,7 @@ app.post('/find', (req,res)=>{
   .then(data => {
     console.log(data);
     if(data.length>0){
-      if(bcrypt.compareSync(pass, data[0].password)){
+      if(bcrypt.compareSync(pass, data[0].password)){  //--------------------------
         res.send({message:`Welcome ${data[0].username}`})
       }
       else{

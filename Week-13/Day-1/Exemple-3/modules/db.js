@@ -1,6 +1,6 @@
 const knex = require('knex');
-const bcrypt = require('bcrypt');
-const saltRounds = 10;
+const bcrypt = require('bcrypt');  //--------------------------
+const saltRounds = 10;  //--------------------------
 
 const db = knex({
   client:'pg',
@@ -14,12 +14,12 @@ const db = knex({
 })
 
 function createUser({user,pass}){
-  const salt = bcrypt.genSaltSync(saltRounds);
+  const salt = bcrypt.genSaltSync(saltRounds); //--------------------------
   console.log(user +" "+ bcrypt.hashSync(pass, salt) + " in db")
   return db('users').insert(
     {
       username:user,
-      password: bcrypt.hashSync(pass, salt)
+      password: bcrypt.hashSync(pass, salt)   //--------------------------
     }
   )
   .returning('*')

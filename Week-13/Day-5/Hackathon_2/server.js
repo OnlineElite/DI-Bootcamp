@@ -2,7 +2,7 @@ const exp = require('express');
 const bp = require('body-parser');
 const DB = require('./modules/db');
 const knex = require('knex')
-
+const bcrypt = require('bcrypt'); 
 
 
 const db = knex({
@@ -23,6 +23,40 @@ app.use(bp.urlencoded({ extended: false }))
 app.use(bp.json())
 
 const port = 3000;
+
+// API to add Items into database
+app.post('/addItem', (req, res) => {
+    console.log(req.body.items);
+    const promises = req.body.items.map(item => {
+        return DB.createItem(item); // Assuming createItem executes the SQL insert query
+    });
+
+    Promise.all(promises)
+        .then(data => {
+            console.log({ message: 'Items added successfully', response: data });
+            res.status(200).send({ message: `Items added successfully` });
+        })
+        .catch(err => {
+            console.error(err);
+            res.status(500).send({ message: 'Internal server error' });
+        });
+});
+
+// API to get All Items from database
+app.get('/getItems', (req, res)=>{
+    db('fooditems')
+        .select('*')
+        .then(data => {
+            console.log({message:'data reseved from database', items: data});
+            res.send(data)
+        })
+        .catch(err => {
+            console.log(err);
+            res.send({message:err.detail})
+        })
+})
+
+
 // API to render landing page
 app.get('/', (req, res) => {
     res.render('index') 
@@ -121,6 +155,12 @@ app.post('/login',(req,res)=>{
             if(data.length>0){
                 onlineUser = data[0].username;
                 res.send({message:`Welcome back: ${data[0].username}  |  User_id: ${data[0].user_id}`, username: data[0].username, admission  : true})
+               /* if(bcrypt.compareSync(pass, data[0].password)){  //--------------------------
+                    res.send({message:`Welcome back: ${data[0].username}  |  User_id: ${data[0].user_id}`, username: data[0].username, admission  : true})
+                }
+                else{
+                    res.send({message:'Wrong password'})
+                }*/
             }
             else {
                 res.send({message : "Hello this account is not registred", admission  : false})
