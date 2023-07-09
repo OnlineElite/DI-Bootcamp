@@ -1,0 +1,73 @@
+*{
+    box-sizing:border-box;
+    margin: 0;
+    padding: 0;
+}
+
+#screen{
+    width: 100vw;
+    height:100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: lightsalmon;
+}
+
+#cart{
+    width: 45%;
+    height: fit-content;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 15px;
+    background-color:crimson;
+    border-radius: 8px;
+}
+#inps{
+    width: 100%;
+    height: fit-content;
+    background-color: transparent;
+    margin-block: 10px;
+    display: flex;
+    justify-content: space-between;
+}
+input{
+    width:49%;
+    height: fit-content;
+    border-radius: 8px;
+    padding: 5px;
+    font-size: 2rem;
+    color: black;
+    text-align: center;
+}
+
+
+#calc{
+    font-size: 22px;
+    font-weight: bold;
+    color: white;
+    background-color:rgb(143, 4, 32);
+    padding: 5px;
+    padding-block: 10px;
+    border: 2px solid white;
+    border-top-left-radius: 10px;
+    border-top-right-radius:25px ;
+    border-bottom-left-radius:25px ;
+    border-bottom-right-radius:10px ;
+    margin-block: 10px;
+}
+h1{
+    color:white;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+#result{
+    padding: 10px;
+    width: fit-content;
+    height: fit-content;
+    color: white;
+    font-size: 5rem;
+    font-weight: bold;
+    background-color: transparent;
+}
