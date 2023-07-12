@@ -2,18 +2,33 @@
 <html lang="en">
 <head>
     <%- include('../partials/head') %>
+    <style>
+        .ro{
+            background-color: lightgray; 
+            border-right: 5px solid white;
+            padding: 10px;
+        }
+        footer{
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            text-align: center;
+            color: white;
+            width: 100vw;
+        }
+    </style>
 </head>
 <body>
     <%- include('../partials/header') %>
     
-    <div class="row">
-        <div id="forms" class="col-sm-6 col-md-6 col-lg-6 col-12">
+    <div class="row" style="margin: 20px;">
+        <div id="forms" class="col-sm-6 col-md-4 col-lg-4 col-12 ro">
             
             <form action="/search/title" method="post">
 
                 <label for="">Search Title</label>
-                <input type="text">
-                <button>Search</button>
+                <input type="text" name="title">
+                <button type="submit">Search</button>
 
             </form>
             
@@ -21,19 +36,37 @@
 
                 <label for="">Search Category</label>
                 <select name="category" id="category">
-                    <% categories.forEach((val)=>{ %>
-                        <option value="<%= val.category %>"><%= val.category %></option>
+                    <% items.forEach((obj)=>{ %> 
+                        <% obj.categories.forEach((category)=>{ %> 
+                            <option value="<%= category %>"><%= category %></option>
+                        <% }) %>
                     <% }) %>
                 </select>
-                <button>Search</button>
+                <button type="submit">Search</button>
 
             </form>
 
         </div>
-        <div id="posts" class="col-sm-6 col-md-6 col-lg-6 col-12">
+
+        <% if(filtredPost.length != 0){ %>
+        <div id="posts" class="col-sm-8 col-md-8 col-lg-8 col-12 ro" >
             
+            <% filtredPost.forEach((item)=> { %>
+                <div class="all">
+                    <h2><a href="<%= item.link %>"><%= item.title %></a></h2>
+                    <div class="info">
+                        <p><%= item.pubDate%></p>
+                        <p><%= item.creator%></p>
+                        <p><%= item.categories.join(', ') %></p>
+                    </div>
+                    <div class="content"><%= item.content %></div>
+                </div>
+            <% }) %>
+
         </div>
+        <%}%>
     </div>
+    
     
 
     <%- include('../partials/footer') %>
