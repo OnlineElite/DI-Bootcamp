@@ -34,10 +34,14 @@ const ShowList = ()=>{
                                     {'• '+ task.item} 
                                 </li>
                                 <div className='btns'>
-                                    <button onClick={() => handelComplate(index)} style={{backgroundColor: (task.completed)? 'lawngreen' : 'darkkhaki'}}>
+                                    <button 
+                                        onClick={() => handelComplate(index)} 
+                                        style={{backgroundColor: (task.completed)? 'lawngreen' : 'darkkhaki'}}>
                                         {(task.completed)? 'Completed': 'Not Completed'}
                                     </button>
-                                    <button onClick={() => handelDelete(index)} style={{backgroundColor: 'red', color : 'white'}}>
+                                    <button 
+                                        onClick={() => handelDelete(index)} 
+                                        style={{backgroundColor: 'red', color : 'white'}}>
                                         Delete
                                     </button>
                                 </div>
