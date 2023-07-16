@@ -1,7 +1,6 @@
 *{
     box-sizing: border-box;
-    padding: 0;
-    margin: 0;
+    
 }
 
 .para {
@@ -10,4 +9,4 @@
     padding: 40px;
     font-family: Arial;
     text-align: center;
-  }
+}
