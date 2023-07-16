@@ -8,7 +8,7 @@ body{
     display: flex;
     align-items: center;
     justify-content: center;
-    background-color:lightblue;
+    background-color:royalblue;
 }
 
 .outside{
@@ -23,11 +23,11 @@ body{
     border: 2px solid white;
     padding: 2rem;
     margin-block: 5px;
-    background-color: rgb(243, 239, 178);
+    background-color: lightblue;
 }
 
 .btn{
-    color:blue;
+    color:rgb(243, 168, 6);
     cursor: pointer;
 }
 
