@@ -3,14 +3,14 @@
     let curentCount = action.counter;
     let newCount;
     switch(action.type){
-        case INCREASE_COUNT:
-            newCount = curentCount + 1;
+        case 'INCREASE_COUNT':
+            newCount = Number(curentCount) + 1;
             return  {
                 ...state, count : newCount
             }
         
-        case DECREASE_COUNT:
-            newCount = curentCount - 1;
+        case 'DECREASE_COUNT':
+            newCount = Number(curentCount) - 1;
             return  {
                 ...state, count : newCount
             }
@@ -21,4 +21,3 @@
 export {reducer}
 
 
-//change the index.js to run successfuly the project

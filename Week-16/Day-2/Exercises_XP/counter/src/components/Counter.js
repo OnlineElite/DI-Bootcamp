@@ -1,12 +1,13 @@
 import React from 'react'
 import {store} from '../store'
 import {increase, decrease} from '../actions'
+import '../counter.css'
 
 function Counter({count}){
 
     function hundellSubmit(e){
         let btnType = e.target.dataset.btn;
-        let currentCounter = e.target.parentElement.h1.dataset.count;
+        let currentCounter = e.target.parentElement.children[1].dataset.counte
 
         switch(btnType){
             case 'increase':
@@ -21,10 +22,10 @@ function Counter({count}){
     }
 
     return(
-        <div>
-            <button type='submit' onClick={hundellSubmit} data-btn = 'increase' ></button>
-            <h1 data-count ={count}> {count} </h1>
-            <button type='submit' onClick={hundellSubmit} data-btn = 'decrease' ></button>
+        <div className='parent'>
+            <button type='submit' onClick={hundellSubmit} data-btn = 'increase' > + </button>
+            <h1 data-counte ={count}> {count} </h1>
+            <button type='submit' onClick={hundellSubmit} data-btn = 'decrease' > - </button>
         </div>
     )
 }
