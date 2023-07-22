@@ -15,7 +15,8 @@ function newList(e){
         description : Description.value,
         startTime : StartTime.value,
         endTime : EndTime.value,
-        status : false
+        status : false,
+        backgraound: 'rgb(10, 2, 116)'
     };
 
     var TasksList = localStorage.getItem("TasksList")

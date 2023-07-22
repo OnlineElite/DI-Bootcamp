@@ -17,6 +17,7 @@ function createDropDown(el){
                 card.setAttribute('aria-expanded', 'false')
                 card.setAttribute('aria-controls', 'collapseExample')   
                 card.setAttribute('class', 'carts')
+                card.style.backgroundColor = el.backgraound;
                     
                     const Ndiv = document.createElement('div')
                     Ndiv.textContent = 'Name: ';
@@ -132,9 +133,17 @@ function addButtns(parent){
 
 function deleteAction(e){
     e.preventDefault();
-    const parent = e.target.parentElement.parentElement.parentElement
+    const grandparent = e.target.parentElement.parentElement.parentElement
     const cont = document.getElementById('subContainer')
-    cont.removeChild(parent) 
+    cont.removeChild(grandparent)
+
+    const parent = e.target.parentElement.parentElement.firstChild;
+    let name = parent.firstChild.lastChild.textContent;
+    const dataLoad = JSON.parse(localStorage.getItem("TasksList"))
+    let oldDataWithoutThisItem = dataLoad.filter((val)=> val.name != name )
+    localStorage.setItem("TasksList", JSON.stringify(oldDataWithoutThisItem) )
+
+
 }
 
 // This function is updating tasks status-----------------------------------------------//
@@ -152,6 +161,7 @@ function handellCheckbox(e){
             if(name === item.name){
                 //console.log("itemTargeted ", item)
                 item.status = true;
+                item.backgraound = 'rgb(10, 185, 10)';
                 status.textContent = true;
                 oldDataWithoutThisItem.push(item)
                 localStorage.setItem("TasksList", JSON.stringify(oldDataWithoutThisItem) )
@@ -165,6 +175,7 @@ function handellCheckbox(e){
             if(name === item.name){
                 //console.log("itemTargeted ", item)
                 item.status = false;
+                item.backgraound = 'rgb(10, 2, 116)';
                 status.textContent = false;
                 oldDataWithoutThisItem.push(item)
                 localStorage.setItem("TasksList", JSON.stringify(oldDataWithoutThisItem) )
