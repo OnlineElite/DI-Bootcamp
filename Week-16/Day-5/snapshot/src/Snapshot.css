@@ -1,0 +1,126 @@
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+.header{
+    margin-block: 2rem;
+}
+.menu{
+    display: flex;
+    width: 100%;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.menu li{
+    margin: 10px;
+    list-style: none;
+    border: 2px solid white;
+    background-color: rgb(1, 23, 51);
+    color: white;
+    border-radius: 5px;
+    padding: 5px;
+    width: 100px;
+    text-align: center;
+}
+.link{
+    color: white;
+    text-decoration: none;
+}
+
+.form{
+    width: 35%;
+}
+.inp_btn{
+    width: 100%;
+}
+
+.inp_btn input, .inp_btn button{
+    padding-inline: 5px;
+    font-size: 18px;
+    border-radius: 8px;
+    padding-block: 8px;
+    border: 2px solid lightgray;
+    color: black;
+    margin: 0px;
+}
+
+.inp_btn button{
+    width: 15%;
+    border-top-left-radius: 0px;
+    border-bottom-left-radius: 0px;
+    border-left: 0px;
+    background-color: gray;
+}
+
+.inp_btn input{
+    width: 85%;
+    border-top-right-radius: 0px;
+    border-bottom-right-radius: 0px;
+    border-right: 0px;
+    background-color: rgb(243, 237, 237);
+}
+
+.inp_btn input:hover{
+    outline: none;
+}
+
+.container{
+    width: 100%;
+    height: fit-content;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-color: rgb(92, 150, 216);
+}
+.img-container{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+.images{
+    width: 90%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.images img{
+    width: 350px;
+    height: 250px;
+    margin: 5px;
+    transform: scale(1.25);
+    transition: transform 1.25s;
+}
+
+.images img:hover{
+    transform: scale(1.65)
+}
+
+.images li{
+    list-style: none;
+    overflow: hidden;
+    margin: 5px; 
+}
+
+h1{
+    width: 100%;
+    text-align: center;
+    font-weight: bold;
+    font-size: 4rem;
+    margin-block: 1.5rem;
+    color: rgb(1, 23, 51);
+}
+h2{
+    width: 100%;
+    text-align: center;
+    font-weight: bold;
+    font-size: 1.5rem;
+    margin: 20px;
+    color: rgb(1, 23, 51);
+}
