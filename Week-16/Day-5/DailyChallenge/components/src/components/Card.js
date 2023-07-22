@@ -1,10 +1,9 @@
 import React, { useEffect, useState } from 'react'
 import '../cards.css'
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 
 function Card({numbers}){
-    const [number, setNumber] = useState('22222222')
-    const [name, setName] = useState('example')
+    const [number, setNumber] = useState('')
+    const [name, setName] = useState('')
     const [icon , setIcon] = useState('')
 
     useEffect(()=>{

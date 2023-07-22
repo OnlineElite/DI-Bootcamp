@@ -59,7 +59,7 @@ function createDropDown(el){
                 // create dropdown menu
                 const dropMenu = document.createElement('div')
                 dropMenu.setAttribute('class', 'collapse')
-                dropMenu.setAttribute('id', el.name.replaceAll(' ', ''))  
+                dropMenu.setAttribute('id', el.name.replaceAll(' ', ''))
 
                     const desc = document.createElement('div')
                     desc.setAttribute('class', 'card card-body')
@@ -121,7 +121,7 @@ function addButtns(parent){
         // add an 'Edite' button to edite the task
         const edit = document.createElement('button')
         edit.textContent = 'Edit'
-        //edit.addEventListener('click', updateAction)
+        edit.addEventListener('click', updateAction)
         edit.classList.add('edit')
         buttonsCont.appendChild(edit)
         
@@ -136,7 +136,7 @@ function deleteAction(e){
     const cont = document.getElementById('subContainer')
     cont.removeChild(parent) 
 }
-// This function is updating tasks-----------------------------------------------//
+
 // This function is updating tasks status-----------------------------------------------//
 function handellCheckbox(e){
     const parent = e.target.parentElement.parentElement.firstChild;
@@ -174,17 +174,23 @@ function handellCheckbox(e){
     
 }
 
-// This function fill the checkboxes-----------------------------------------------//
+// This function update tasks -----------------------------------------------//
 var updatedData={}
+let parent, name, dataLoad, oldDataWithoutThisItem ;
 function updateAction(e){
     e.preventDefault()
     const cont = document.getElementById('subContainer')
     console.log(e.target)
     createModal(cont, e.target)
-    const parent = e.target.parentElement.parentElement.firstChild;
-    let name = parent.firstChild.lastChild.textContent;
-    const dataLoad = JSON.parse(localStorage.getItem("TasksList"))
-    let oldDataWithoutThisItem = dataLoad.filter((val)=> val.name != name )
+    parent = e.target.parentElement.parentElement.firstChild;
+    name = parent.firstChild.lastChild.textContent;
+    dataLoad = JSON.parse(localStorage.getItem("TasksList"))
+    oldDataWithoutThisItem = dataLoad.filter((val)=> val.name != name )   
+    
+}
+
+// this fanction replace data in local storage
+function replaceData(){
 
     dataLoad.forEach(item => { 
         if(name === item.name){
@@ -197,6 +203,7 @@ function updateAction(e){
             item.status = updatedData.status;
             oldDataWithoutThisItem.push(item)
             localStorage.setItem("TasksList", JSON.stringify(oldDataWithoutThisItem) )
+
         }
     })
 }
@@ -305,12 +312,14 @@ function createModal(parent, buttonTrigger){
             status : status.value
         };
 
+        console.log(updatedData)
+
         name.value = ''
         discription.value = ''
         startDate.value = ''
         endDtae.value = ''
         status.value = ''
-
+        replaceData()
     }
 }
 

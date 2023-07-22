@@ -31,7 +31,7 @@ function newList(e){
     }
     console.table(JSON.parse(localStorage.getItem("TasksList")))
     
-    window.open('show.html', '_blank')
+    window.open('show.html')
     
 
 }

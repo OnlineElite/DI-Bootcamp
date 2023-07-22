@@ -25,20 +25,22 @@ body{
     padding: 2rem;
     margin-block: 2rem;
     margin-inline:3rem ;
-    background-color: coral;
-    border: 2px solid white;
+    background-color: rgb(2, 68, 85);
+    border: 2px solid rgb(155, 248, 240);
     border-radius: 0.5rem;
     color: yellow;
+    font-size: 18px;
+    
 }
 
 .card h1{
     font-size: 3.5rem;
     font-weight: bold;
-    color: black;
+    color: white;
 }
 
 .card label{
     font-size: 18px;
     font-weight: bold;
-    color: rgb(51, 50, 50);
+    color: lightgray;
 }
