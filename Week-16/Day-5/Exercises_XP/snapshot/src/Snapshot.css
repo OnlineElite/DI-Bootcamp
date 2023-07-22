@@ -42,8 +42,6 @@
     font-size: 18px;
     border-radius: 8px;
     padding-block: 8px;
-    border: 2px solid lightgray;
-    color: black;
     margin: 0px;
 }
 
@@ -52,7 +50,8 @@
     border-top-left-radius: 0px;
     border-bottom-left-radius: 0px;
     border-left: 0px;
-    background-color: gray;
+    background-color: rgb(1, 23, 51);
+    color: white;
 }
 
 .inp_btn input{
@@ -61,6 +60,7 @@
     border-bottom-right-radius: 0px;
     border-right: 0px;
     background-color: rgb(243, 237, 237);
+    color: black;
 }
 
 .inp_btn input:hover{
@@ -74,7 +74,7 @@
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    background-color: rgb(92, 150, 216);
+    background-color: rgb(207, 217, 230);
 }
 .img-container{
     display: flex;
