@@ -1,20 +1,32 @@
-import React from 'react'
-import '../MoviesList.css'
+import React from 'react';
+import { connect } from 'react-redux';
+import { selectMovie } from '../actions';
+import '../Movie.css'
 
-function MoviesList(props){
-
+const MovieList = ({ movies, selectMovie }) => {
+  const renderMovies = () => {
     return(
-        <div className='list'>
-            <h2>Movies List</h2>
-            <div className='box'>
-                <ul>
-                    {props.movieDetail.map((item, index)=>(
-                        <div className='row'> <li key={index}> {item.title} </li> <button>details</button> </div>
-                    ))}
-                </ul>
-            </div>
+      <div className='list'>
+        <h2>Movies List</h2>
+        <div className='box'>
+            <ul>
+                {movies.map((movie)=>(
+                    <div key={movie.title} className='row'>
+                        <li> {movie.title} </li>
+                        <button onClick={() => selectMovie(movie)}>details</button> 
+                    </div>
+                ))}
+            </ul>
         </div>
-    )
-}
+    </div>
+    ) 
+  };
 
-export default MoviesList;
+  return <div>{renderMovies()}</div>;
+};
+
+const mapStateToProps = (state) => {
+  return { movies: state.movies };
+};
+
+export default connect(mapStateToProps, { selectMovie })(MovieList);
