@@ -1,14 +1,15 @@
 
-
-const selectedrobotreducer = (state, action ) =>{
+const reducer = (state, action ) =>{
     console.log('reducer state', state)
-    if(action.type === 'SELECTED_ROBOT'){
-        return action.playload
-    }
-    else{
-        return state;
+
+    switch(action.type){
+        case 'SELECTED_ROBOT' :
+            return action.payload
+
+        default :
+            return state;
     }
 }
 
-export default selectedrobotreducer;
+export default reducer;
 
