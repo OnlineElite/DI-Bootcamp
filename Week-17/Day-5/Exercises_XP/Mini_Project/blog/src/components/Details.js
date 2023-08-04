@@ -17,7 +17,7 @@ function Details(props){
         let specific_id = e.target.dataset.id
         console.log('specific_id', specific_id)
         props.next(specific_id)
-        props.browserHistory.push('/')
+        //props.browserHistory.push('/')
 
     }
     

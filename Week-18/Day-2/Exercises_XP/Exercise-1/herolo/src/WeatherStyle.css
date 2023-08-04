@@ -133,9 +133,59 @@
 }
 
 .right .icon2{
-    font-size: 30px;
+    font-size: 20px;
 }
 
 .added{
     color: red;
+}
+
+.nextDaysCards{
+    width: 100%;
+    height: fit-content;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+}
+.cards{
+    min-width: fit-content;
+    min-height: fit-content;
+    background-color: rgb(3, 3, 53);
+    color: white;
+    margin: 2px;
+    border: 2px solid yellow;
+    padding-inline: 1rem;
+    padding-block: 0.5rem;
+    border-radius: 8px;
+}
+
+.favory{
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+}
+
+.like{
+    color: red;
+}
+
+.max {
+    color: red;
+}
+
+.min {
+    color: orange;
+}
+
+.weather_status{
+    color: yellow;
+    width: 100%;
+    text-align: center;
+}
+.day{
+    color: rgb(10, 252, 10);
+    width: 100%;
+    text-align: center;
 }

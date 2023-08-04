@@ -16,7 +16,7 @@ function App() {
         <div className='body'>
             <Routes >
                 <Route exact path = '/' element = {<WeatherForm/>} />
-                <Route path = '/favories' element = {<WeatherFavorites/>} />
+                <Route path = '/favorites' element = {<WeatherFavorites/>} />
             </Routes>
         </div>  
       </BrowserRouter>
