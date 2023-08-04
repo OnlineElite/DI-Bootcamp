@@ -30,8 +30,13 @@ const reducer = (state, action) =>{
 
         case 'IS_ADDED' : 
             let temp = [...state.favories]
-            //check if it's already exest
-            temp.push(action.playload)
+
+            let ifExist = temp.filter((e) => e.name === action.playload.name )
+            console.log()
+            if(ifExist.length <= 0){
+                temp.push(action.playload)
+                alert('item is added')
+            }
             return {
                 ...state,
                 favories :  temp

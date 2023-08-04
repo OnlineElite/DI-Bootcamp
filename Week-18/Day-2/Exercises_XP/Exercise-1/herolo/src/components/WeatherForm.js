@@ -20,11 +20,14 @@ function WeatherForm(props){
     function addToFavories(e){
         e.preventDefault()
         props.favories({name :props.name, temp : props.temperateur})
+        
     }
 
     return(
         <div className='main'>
             <input type='text' name='search' placeholder='Enter a city name' onBlur={hundellInput} />
+           
+            {props.name.length > 0 ? (
             <div className='display'>
                 <div className='header'>
                     <div className='left'>
@@ -50,7 +53,7 @@ function WeatherForm(props){
                         </div>
                     ))}
                 </div>
-            </div>
+            </div> ) : <></> } 
         </div>
     )
 }

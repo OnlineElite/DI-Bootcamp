@@ -3,7 +3,7 @@ import {createStore, applyMiddleware} from 'redux'
 import {reducer} from '../reducers/WeatherReducer'
 import thunk from 'redux-thunk'
 const initialState = {
-    cityName : 'City',
+    cityName : '',
     temperateur : '0',
     nextFiveDays : [],
     favories : [],

@@ -40,6 +40,7 @@ const addFavories = (data) =>{
 }
 
 const weatherForecastThunk = (value) => (dispatch)=>{
+    console.log('asngfhgfhgasd', value)
     const API_Key = 'wCm3m5OA5VstnJDfSjcXUPP7lAKlNv7S'   //old :'lJG10Gw0RHA4bzBzipAGZ5fA5lGjA9ZE'
     const LOCATION_API = `http://dataservice.accuweather.com/locations/v1/cities/autocomplete?q=${value}&apikey=${API_Key}&language=en-us`
     
