@@ -35,7 +35,7 @@ class Home extends React.Component{
 
 const mapStateToProps = (state) =>{
     return {
-        data : state
+        data : state.obj
     }
 }
 export default connect(mapStateToProps)(Home);

@@ -1,11 +1,12 @@
 import '../style.css'
-import { useParams } from 'react-router-dom';
+import { useNavigate, useParams } from 'react-router-dom';
 import { connect } from 'react-redux';
-import { Link} from "react-router-dom";
+//import { Link} from "react-router-dom";
 import deletePost from '../actions/postActions'
 
 function Details(props){
     const p_id = useParams().post_id
+    const navigate = useNavigate()
     let data;
     
     (function fillPost (){
@@ -16,8 +17,8 @@ function Details(props){
         e.preventDefault()
         let specific_id = e.target.dataset.id
         console.log('specific_id', specific_id)
+        navigate('/')
         props.next(specific_id)
-        //props.browserHistory.push('/')
 
     }
     
@@ -26,7 +27,7 @@ function Details(props){
         <div className='details'>
             <h4> {data[0].title} </h4>
             <p> {data[0].body} </p>
-            <Link to='/'><button onClick={handleClick} data-id={data[0].id} >DELETE POST</button></Link>
+            <button onClick={handleClick} data-id={data[0].id} >DELETE POST</button>
             
         </div>
     )
@@ -35,7 +36,7 @@ function Details(props){
 const mapStateToProps = (state) =>{
     //console.log('detail state', state)
     return {
-        posts : state 
+        posts : state.obj
     }
 }
 
