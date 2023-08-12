@@ -98,3 +98,10 @@
     font-size: 18px;
     padding: 5px;
 }
+
+.load{
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color: white;
+    margin-block: 1.5rem;
+    font-size: 3rem;
+}

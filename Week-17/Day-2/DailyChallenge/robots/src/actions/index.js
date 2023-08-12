@@ -1,9 +1,9 @@
 
-const selectrobot = (robot) => {
-    console.log('action state', robot)
+const selectrobot = (robots) => {
+    console.log('action state', robots)
     return{
         type : 'SELECTED_ROBOT',
-        payload: robot
+        payload: robots
     }
 }
 
@@ -27,19 +27,19 @@ const robotError = (error) =>{
 
 
 const robosThunk = () => (dispatch)=>{
+    console.log('thunk message ' )
     fetch(`https://jsonplaceholder.typicode.com/users`)
     .then((response)=>{
         return response.json();
     })
     .then((data)=>{
-        console.log('data fetched' ,data)
-        dispatch(robotsLoaded())
+        console.log('data fetched --------------------------- ' ,data)
+        dispatch(robotsLoaded(data))
     })
     .catch((error)=>{ 
         console.log('erreur message: ', error.message)
         dispatch(robotError(error.message))
     })
-
 }
 
 export {selectrobot, robosThunk}

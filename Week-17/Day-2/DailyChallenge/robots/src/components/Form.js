@@ -1,22 +1,31 @@
 import React from 'react'
+import { useEffect } from 'react'
 import '../Robots.css'
 import {selectrobot, robosThunk} from '../actions'
 import {connect} from 'react-redux'
 
 function Form(props){
-    console.log('form robots', props.data)
-    //const Default = props.data;
-    robosThunk()
+    const getDtaFromFetch = ()=>{
+        props.getdata()
+        console.log('form robots', props.data)
+    }
+    useEffect(() => {
+        getDtaFromFetch();
+    }, []);
+
     function hansellinput(e){
       var value = e.target.value.toLowerCase()
       console.log("value", value)
 
       if(value !== ""){
+        console.log('in form')
         var temp = []
         props.data.map((robot)=>(
           (robot.name.toLowerCase().includes(value))? temp.push(robot) : ''
         ))
         props.next(temp)
+      }else{
+        props.next(props.data)
       }
     }
 
@@ -39,7 +48,10 @@ const mapDispatchToProps = (dispatch) =>{
     return {
         next : (robot)=>{
             dispatch(selectrobot(robot))
-        }
+        },
+        getdata : ()=>{
+            dispatch(robosThunk())
+        },
     }
 }
 export default connect(mapStateToProps, mapDispatchToProps)(Form)
