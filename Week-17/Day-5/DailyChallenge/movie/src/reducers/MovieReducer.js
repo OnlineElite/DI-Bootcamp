@@ -2,14 +2,15 @@
 
 const reducer = (state, action ) =>{
     switch(action.type){
-        case 'SEARCH_MOVIE':
-            return{ ...state,text : action.payload}
-
+        
         case 'FETCH_MOVIES':
+            console.log('reducer data',action.payload)
             return{ ...state,movies : action.payload}
         
         case 'FETCH_MOVIE':
-            return{ ...state,movie : action.payload}
+            let temp = []
+            temp.push(action.payload)
+            return{ ...state,movie : temp}
 
         case 'LOADING':
             return{ ...state,loading : action.payload}

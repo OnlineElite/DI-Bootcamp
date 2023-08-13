@@ -1,11 +1,4 @@
 
-const serchMovie =(movie)=>{
-    return {
-        type :'SEARCH_MOVIE',
-        payload : movie
-    }
-}
-
 const fetchMovies =(movies)=>{
     return {
         type :'FETCH_MOVIES',
@@ -29,15 +22,19 @@ const loading =(value)=>{
 
 
 const moviesThunk = (value) => (dispatch)=>{
-    fetch('')
+    dispatch(loading(true))
+    const APIKey = 'a117c37d'
+    const url = `http://www.omdbapi.com/?i=tt3896198&apikey=${APIKey}&s=${value}`
+    fetch(url)
     .then((res)=>{
         return res.json()
     })
     .then((data)=>{
-        console.log('data fetched', data)
-        dispatch(fetchMovies(data)) //???????????
+        console.log('data fetched', data.Search)
+        dispatch(fetchMovies(data.Search))
+        dispatch(loading(false))
     })
 }
 
 
-export {moviesThunk}
+export {moviesThunk, fetchMovie, loading}
