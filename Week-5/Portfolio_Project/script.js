@@ -7,8 +7,8 @@ const techSkills = [
     { name : 'JavaScript', range : 85 },
     { name : 'DOM', range : 98},
     { name : 'JSON', range : 94 },
-    { name : 'HTTP', range : 93 },
-    { name : 'AJAX', range : 90 },
+    { name : 'ReactJs', range : 93 },
+    { name : 'Redux', range : 90 },
     { name : 'PostgreSQL', range : 90 },
     { name : 'Node.js', range : 30 }
 ]
