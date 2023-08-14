@@ -5,12 +5,16 @@ const techSkills = [
     { name : 'CSS3', range : 95 },
     { name : 'Bootstrap', range : 95 },
     { name : 'JavaScript', range : 85 },
+
+    { name : 'Github', range : 98 },
     { name : 'DOM', range : 98},
-    { name : 'JSON', range : 94 },
-    { name : 'ReactJs', range : 93 },
-    { name : 'Redux', range : 90 },
+    { name : 'Node.js', range : 60 },
+    { name : 'Databases', range : 70 },
+
+    { name : 'SQL', range : 80 },
     { name : 'PostgreSQL', range : 90 },
-    { name : 'Node.js', range : 30 }
+    { name : 'React', range : 93 },
+    { name : 'Redux', range : 90 },
 ]
 
 techSkills.forEach((val) => {
