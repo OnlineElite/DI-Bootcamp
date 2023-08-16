@@ -15,7 +15,10 @@ const techSkills = [
     { name : 'PostgreSQL', range : 90 },
     { name : 'React', range : 93 },
     { name : 'Redux', range : 90 },
+<<<<<<< HEAD
     
+=======
+>>>>>>> 65246c8c138399ae0e848dda607e2cdc7d7c5497
 ]
 
 techSkills.forEach((val) => {
