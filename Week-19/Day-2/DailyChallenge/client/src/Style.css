@@ -1,0 +1,183 @@
+*{
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+/*--------------------------Navbar section-----------------------------*/
+.navbar{
+    background-color: rgb(1, 1, 70);
+}
+.navbar, .collapse{
+    padding: 5px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.buttons, .form-inline{
+    width: 50%;
+}
+.collapse{
+    justify-content: center;
+    padding-inline: 2rem;
+}
+
+.buttons{
+    margin-left: 5rem;
+    width: 50%;
+
+}
+
+.buttons button{
+    background-color: rgb(241, 217, 208);
+    color: black;
+    margin-inline: 0.2rem;
+    padding: 5px;
+    font-size: 18px;
+    border-radius: 8px;
+    border: 1px solid white;
+}
+
+.form-inline, ul{
+    width: 50%;   
+    padding: 5px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+}
+.form-inline input{
+    width: 70%;
+}
+
+.form-inline button{
+    background-color: rgb(241, 217, 208);
+    color: black;
+    width: fit-content;
+    padding: 5px;
+    font-size: 18px;
+    border-radius: 8px;
+    border: 1px solid white;
+}
+.form-inline input{
+    margin-right: 0.3rem;
+}
+
+.collapse ul li .Link{
+    color: white;
+    text-decoration: none;
+}
+
+.collapse ul li{
+    list-style: none;
+    margin-inline: 1.2rem;
+}
+
+.collapse ul li .Link:hover{
+    color: rgb(5, 5, 255);
+    background-color: white;
+    border-radius: 8px;
+    padding: 3px;
+    font-weight: bold;
+}
+
+.Link_logo{
+    color: white;
+    padding-inline: 3rem;
+    font-size: 2rem;
+    text-decoration: none;
+}
+
+.icon{
+    font-size: 3rem;
+}
+
+/*--------------------------RegisterForm & loginForm section-----------------------------*/
+
+.registerContainer, .logingContainer{
+    width: 100vw;
+    height: 80vh;
+    background-size: cover;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    margin: 0;
+}
+
+.RegisterForm, .LoginForm{
+    width: 35%;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    background-color: rgb(241, 217, 208);
+    border-radius: 10px;
+    border: 2px solid white;
+}
+.registerContainer input, .logingContainer input{
+    width: 60%;
+    border-radius: 8px;
+    padding: 5px;
+    margin: 5px;
+    color: black;
+    font-size: 18px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: lightyellow;
+    border: 2px solid rgb(1, 1, 70);
+}
+
+.registerContainer button, .logingContainer button{
+    border-radius: 8px;
+    padding: 5px;
+    margin: 5px;
+   /* background-color: rgb(1, 1, 70);*/
+    /*color: white;*/
+    font-weight: bold;
+    align-self: flex-start;
+    margin-left: 20px;
+    font-size: 18px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    border: 2px solid rgb(1, 1, 70);
+}
+
+.ro{
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-inline: 20px;
+}
+.ro label{
+    width: 30%;
+    color: black;
+    font-size: 18px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-weight: bold;
+}
+.registerContainer hr, .logingContainer hr{
+    width: 100%;
+    color: white;
+    size: 2px;
+    margin: 5px;
+}
+.registerContainer h1, .logingContainer h1{
+    width: 100%;
+    background-color: rgb(1, 1, 70);
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    text-align: center;
+    margin-bottom: 10px;
+    color: white;
+
+}
+
+.alert{
+    width: fit-content;
+    margin: auto;
+    padding-inline: 3rem;
+    margin-top: 2rem;
+    margin-bottom: 1rem;
+    height: fit-content;
+}
+
+
