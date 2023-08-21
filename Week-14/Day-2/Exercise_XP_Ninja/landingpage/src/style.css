@@ -1,0 +1,110 @@
+*{
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+
+.navbar{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #f4511e;
+    color: white;
+    padding-block: 1.8rem;
+}
+
+.nav{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+
+}
+
+.nav h1{
+    font-size: 3rem;
+}
+
+.nav p{
+    font-size: 20px;
+
+}
+
+.contact{
+    background-color: #f6f6f6;
+}
+.contact h2{
+    padding-block: 2rem;
+}
+
+.contact .row{
+    padding-block: 1rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.contact .info{
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+    flex-direction: column;
+    padding-left: 2rem;
+}
+.contact form{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    width: 80%;
+}
+
+.contact form input, .contact form button, .contact form textarea{
+    width: 100%;
+    margin-block: .3rem;
+    padding: 5px;
+}
+
+.contact form textarea{
+    height: 150px;
+}
+
+.contact form button{
+    background-color: #f4511e;
+    color: white;
+    border: none;
+}
+.contact form label{
+    align-self: flex-start;
+    margin-block: 0.5rem;
+}
+
+.icon{
+    color: #f4511e;
+    font-size: 7rem;
+}
+
+.middel{
+    background-color: #f6f6f6;
+}
+
+.cart  .car{
+    display: flex;
+    align-items: flex-start;
+    padding-left: 2rem;
+}
+
+.content{
+    display: flex;
+    align-items: flex-start;
+    flex-direction: column;
+}
+
+.cart .row{
+    padding-block: 3rem;
+}
+
+.content p{
+    text-align:left;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
