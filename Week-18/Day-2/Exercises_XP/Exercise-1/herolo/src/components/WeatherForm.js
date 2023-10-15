@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState } from 'react'
 import '../WeatherStyle.css'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import {connect} from 'react-redux'
@@ -6,11 +6,19 @@ import {weatherForecastThunk, addFavories} from '../actions/WeatherAction'
 
 function WeatherForm(props){
 
-    
+    const [value, setValue] = useState(null)
+    const [showAlert, setShowAlert] = useState(false)
+
+    function handelChange(e){
+        let inpvalue = e.target.value;
+        console.log(inpvalue)
+        setValue(inpvalue)
+    }
+
     function hundellInput(e){
-        let value = e.target.value;
-        console.log(value)
+        e.preventDefault();
         props.next(value)
+        document.getElementById('searchinp').value = '';
     }
 
     function getDayName(date = new Date(), locale = 'en-US') {
@@ -20,13 +28,21 @@ function WeatherForm(props){
     function addToFavories(e){
         e.preventDefault()
         props.favories({name :props.name, temp : props.temperateur})
-        
+        if (props.addMsg) {
+            setShowAlert(true);
+            setTimeout(() => {
+                setShowAlert(false);
+            }, 2000);
+        } 
     }
 
     return(
         <div className='main'>
-            <input type='text' name='search' placeholder='Enter a city name' onBlur={hundellInput} />
-           
+            {showAlert && <div class="alert text-white bg-black alert-warning  border-white px-5" role="alert"> {props.addMsg} </div>}
+            <div className='formi'>
+                <input id='searchinp' type='text' name='search' placeholder='Enter a city name' onChange={handelChange}/>
+                <button onClick={hundellInput}><FontAwesomeIcon icon="fa-solid fa-magnifying-glass" /></button>
+            </div>
             {props.name.length > 0 ? (
             <div className='display'>
                 <div className='header'>
@@ -53,7 +69,7 @@ function WeatherForm(props){
                         </div>
                     ))}
                 </div>
-            </div> ) : <></> } 
+            </div> ) : <div className='display'></div> } 
         </div>
     )
 }
@@ -64,7 +80,8 @@ const mapStateToProps = (state)=>{
         temperateur : state.temperateur,
         nextFiveDays : state.nextFiveDays,
         favories : state.favories,
-        error : state.error
+        error : state.error,
+        addMsg : state.addMsg
     }
 }
 

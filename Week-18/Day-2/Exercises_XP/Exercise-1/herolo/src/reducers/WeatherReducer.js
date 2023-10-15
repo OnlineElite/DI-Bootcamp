@@ -32,14 +32,12 @@ const reducer = (state, action) =>{
             let temp = [...state.favories]
 
             let ifExist = temp.filter((e) => e.name === action.playload.name )
-            console.log()
             if(ifExist.length <= 0){
                 temp.push(action.playload)
-                alert('item is added')
             }
             return {
                 ...state,
-                favories :  temp
+                favories :  temp, addMsg : 'item added to favories successfully'
             }
         default :
             return state

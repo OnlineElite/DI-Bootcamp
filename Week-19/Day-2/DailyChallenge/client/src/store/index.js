@@ -6,7 +6,11 @@ const initialState = {
     RegisterRespond : null,
     LoginRespond : null,
     error : null,
-    admission : false
+    admission : false,
+    userEmail : null,
+    isAdmin : false
 }
 
 export  const store = createStore(userReducer, initialState, applyMiddleware(thunk))
+
+

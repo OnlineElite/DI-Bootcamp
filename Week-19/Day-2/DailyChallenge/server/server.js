@@ -96,14 +96,18 @@ app.post('/login',(req,res)=>{
                 let isAuthontefid = bcrypt.compareSync(password, data[0].password)
                 console.log('is Authontefid', isAuthontefid)
                 if(isAuthontefid){
-
-                    res.send({message:`Welcome back: ${data[0].username}`, username: data[0].username, admission  : true})
+                    if(data[0].username === 'admin'){
+                        res.send({message:`Welcome back: ${data[0].username}`, email: data[0].email, admission  : true, isAdmin : true})
+                    }else{
+                        res.send({message:`Welcome back: ${data[0].username}`, email: data[0].email, admission  : true, isAdmin : false})
+                    }
+                    
                     DB.addLoginUser(req.body)
                     .then(data => {
-                        res.sendStatus = 200;
+                        console.log('data from database', data)
                     })
                     .catch(err => {
-                        res.send({message: "Internal error"})
+                        res.send({message: `Internal error: ${err}`})
                     })
                 }
                 else{
@@ -133,6 +137,18 @@ app.post('/login',(req,res)=>{
     }  
 })
 
+// API for log out  /**********************************************************//
+app.post('/logout', (req, res)=>{
+    console.log('data logout receved', req.body)
+    DB.removeLoginUser(req.body)
+    .then(data => {
+        console.log('data from database', data)
+    })
+    .catch(err => {
+        res.send({message: `Internal error: ${err}`})
+    })
+    res.send({message: 'loged out successfully',  admission  : false})
+})
 
 app.listen(port, ()=> console.log(`server listening on port ${port} `))
 

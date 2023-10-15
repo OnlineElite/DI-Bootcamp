@@ -13,6 +13,12 @@ const userReducer = (state, action)=>{
         case 'AUTHONTIFICATION':
             return {...state, admission : action.payload}
 
+        case 'USER_EMAIL':
+            return {...state, userEmail : action.payload}
+
+        case 'IS_ADMIN':
+            return {...state, isAdmin : action.payload}
+
         default:
             return state;
     }

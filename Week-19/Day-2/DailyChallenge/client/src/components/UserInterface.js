@@ -3,7 +3,7 @@ import Navbar from './Navbar'
 import {connect} from 'react-redux'
 import {LogOutThunk} from '../actions/FormAction'
 
-function Dashbord(props){
+function UserInterface(props){
 
 
     const handellLogOut =(e)=>{
@@ -22,7 +22,7 @@ function Dashbord(props){
     return(
         <div>
             <Navbar/>
-            <h1>Dashbord Page  for : {props.useremail} </h1>
+            <h1>User Page  for : {props.useremail} </h1>
             <button onClick={handellLogOut}>Log Out</button>
         </div>
     )
@@ -44,5 +44,5 @@ const mapDispatchToProps =(dispatch)=>{
     }
 }
 
-export default connect(mapStateToProps, mapDispatchToProps) (Dashbord);
+export default connect(mapStateToProps, mapDispatchToProps) (UserInterface);
 

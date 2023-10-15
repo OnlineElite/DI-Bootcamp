@@ -54,31 +54,37 @@ function LoginForm(props){
         const ids = ['email', 'password'];
         const inputs = ids.map(id => document.getElementById(id));
         inputs.forEach((inp) => { inp.value =""})
-        if(props.admission === true){
-            console.log('to dashbord page')
-            setTimeout(()=>{
-                window.location.href = 'http://localhost:3000/dashbord';               
-            }, 2000)
-        }
+        
     }
 
     useEffect(() => {
         if (props.response) {
-          setShowAlert(true);
-          const timeoutId = setTimeout(() => {
-            setShowAlert(false);
-          }, 1000);
-    
-          return () => {
-            clearTimeout(timeoutId);
-          };
+            setShowAlert(true);
+            const timeoutId = setTimeout(() => {
+                setShowAlert(false);
+            }, 3000);
+        
+            if(props.admission === true){
+                console.log('to dashbord page')
+                if(props.isAdmin === true){
+                    window.location.href = 'http://localhost:3000/dashbord';
+                }else{
+                    window.location.href = 'http://localhost:3000/userInterface';
+                }                 
+            }
+            else{
+                console.log('wrong information')
+            }
+            return () => {
+                clearTimeout(timeoutId);
+            };
         }
-    }, [props.response]);
+    }, [props.response, props.admission]);
 
     return(
         <div className='logincomp'>
             <Navbar/>
-            {showAlert && ( <div className="alert alert-success" role="alert"> {props.response} </div> )}
+            {showAlert && ( <div className="alert alert-success" role="alert"> {props.response} {props.useremail} </div> )}
             <div className="logingContainer">
                 <form className="LoginForm" onSubmit={HandelSubmit} >
                     <h1>Login :</h1>
@@ -95,7 +101,9 @@ function LoginForm(props){
 const mapStateToProps =(state)=>{
     return{
         response : state.LoginRespond,
-        admission : state.admission
+        admission : state.admission,
+        useremail : state.userEmail,
+        isAdmin : state.isAdmin
     }
 }
 

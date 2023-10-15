@@ -6,7 +6,8 @@ const initialState = {
     temperateur : '0',
     nextFiveDays : [],
     favories : [],
-    error : null
+    error : null,
+    addMsg : null
 }
 
 export const store = createStore(reducer, initialState, applyMiddleware(thunk))

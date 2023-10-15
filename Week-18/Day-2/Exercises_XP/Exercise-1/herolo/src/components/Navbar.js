@@ -9,7 +9,7 @@ function Navbar(){
 
     return(
         <div>
-            <nav className="navbar navbar-dark bg-primary">
+            <nav className="navbar navbar-dark bg-primary px-4">
                 <Link className='Link_logo' to= '/'> Herolo Weather</Link>
                 <div className="form-inline">
                     <ul>

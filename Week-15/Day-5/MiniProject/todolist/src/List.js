@@ -17,7 +17,7 @@ const ShowList = ()=>{
 
     function handelDelete(index){
         setTasks(
-            tasks.filter((task, i)=> i != index )
+            tasks.filter((task, i)=> i !== index )
         )
     }
 

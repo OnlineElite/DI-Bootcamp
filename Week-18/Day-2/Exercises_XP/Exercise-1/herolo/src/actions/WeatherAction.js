@@ -82,7 +82,6 @@ const weatherForecastThunk = (value) => (dispatch)=>{
         })
         .catch((error)=>{ 
             console.log('data from thunk', error.message)
-            
             dispatch(weatherFialed(error.message))
         })
     }

@@ -15,7 +15,7 @@ const db = knex({
 
 function createUser({firstname,lastname,email,username,password}){
   const salt = bcrypt.genSaltSync(saltRounds);
-  console.log(`I'm inserting register data: ${firstname} , ${lastname} , ${email}, ${username}, ${password}`)
+  console.log(`I'm inserting into users table: ${firstname} , ${lastname} , ${email}, ${username}, ${password}`)
   return db('users').insert( 
     {
       first_name : firstname,
@@ -30,7 +30,7 @@ function createUser({firstname,lastname,email,username,password}){
 
 function addLoginUser({email,password}){
     const salt = bcrypt.genSaltSync(saltRounds);
-    console.log(`I'm inserting login data:  ${email}, ${password}`)
+    console.log(`I'm inserting into login table:  ${email}, ${password}`)
     return db('login').insert( 
       {
         email : email,
@@ -41,8 +41,24 @@ function addLoginUser({email,password}){
 }
 
 
+function removeLoginUser({ email }) {
+  console.log(`I'm removing from login table: ${email}`);
+  return db('login')
+      .where({ email: email })
+      .del()
+      .then(() => {
+          console.log(`Removed login user: ${email}`);
+      })
+      .catch(error => {
+          console.error('Error removing login user:', error);
+          throw error;
+      });
+}
+
+
 
 module.exports = {
   createUser,
-  addLoginUser
+  addLoginUser,
+  removeLoginUser
 }

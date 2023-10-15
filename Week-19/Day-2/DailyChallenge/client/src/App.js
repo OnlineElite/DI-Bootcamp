@@ -8,6 +8,7 @@ import RegisterForm from './components/RegisterForm'
 import LoginForm from './components/LoginForm'
 import Landing from './components/Landing'
 import Dashbord from './components/Dashbord'
+import UserInterface from './components/UserInterface'
 import './App.css';
 
 function App() {
@@ -19,6 +20,7 @@ function App() {
           <Route path='/register' element={<RegisterForm/>} />
           <Route path='/login' element={<LoginForm/>} />
           <Route path='/dashbord' element={<Dashbord/>} />
+          <Route path="/userInterface" element={<UserInterface/>} />
         </Routes>
       </BrowserRouter>
     </div>

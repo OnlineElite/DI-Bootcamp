@@ -2,6 +2,17 @@
 /*-------------------MiniProject--------------------*/
 generateColors()
 whiteSpaceDrawing()
+
+function createWhiteSpace(){
+    let whiteSpace = document.getElementById('whiteSpace')
+    for(let i= 0 ; i < 13000; i++){
+        var box = document.createElement('div')
+        box.setAttribute('class', 'box')
+        whiteSpace.appendChild(box)
+    }
+}
+createWhiteSpace()
+
 // Set & select colors
 const changeColor = document.getElementById('change')
 const clearBtn = document.getElementById('clear')
